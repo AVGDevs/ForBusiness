@@ -1,0 +1,2 @@
+class Colaborador < ApplicationRecord
+end

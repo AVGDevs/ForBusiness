@@ -1,0 +1,73 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(255, 255, 255)   ;
+  font-family: 'Trebuchet MS', 'Helvtica', sans-serif;
+  font-size: 1em;
+}
+
+p {
+  font-size: 1.5em;
+  text-align: center;
+  padding: 10px;
+}
+
+h1 {
+  padding: 10px;
+  text-align: center;
+}
+
+#logo {
+  position: absolute;
+}
+
+#container-cabecalho {
+  background: rgb(40, 138, 218);
+  color: black;
+  height: 80px;
+  padding: 0px 40px;
+}
+
+#login-cabecalho {
+  float: right;    
+  padding: 30px 10px;
+}
+
+#login-cabecalho a {
+  color: black;
+  text-decoration: none;
+}
+
+#login-cabecalho a:link, a:visited, a:active  {
+  color: #3d3d3d;
+  padding: 30px 10px;
+}
+
+#login-cabecalho a:hover{
+  color: #DCDCDC;
+  background: #3d3d3d;
+  padding: 30px 10px;
+}
+
+#area-principal {
+  width: 960px;       
+  padding: 1px;
+  margin: 0px auto;
+  background: rgb(255, 255, 255) ;
+  align-items: center;
+  font-size: 12px;
+}
+
+img.centralizada {
+  display: block;
+  margin: 0 auto;
+}

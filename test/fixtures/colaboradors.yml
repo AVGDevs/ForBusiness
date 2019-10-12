@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nomeColaborador: MyString
+  cpfColaborador: MyString
+  setorColaborador: MyString
+
+two:
+  nomeColaborador: MyString
+  cpfColaborador: MyString
+  setorColaborador: MyString
