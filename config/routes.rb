@@ -1,14 +1,8 @@
 Rails.application.routes.draw do
-  get 'tarefa/index'
-  get 'colaborador/index'
-  get 'empresa/index'
-  get 'departamento/index'
-  get 'fato/index'
-  get 'home/index'
-  get 'users/index'
-  get 'admins/index'
+  devise_for :users
+  devise_for :admins
+  resources :empresa
 
-
-  root to: "home#index"
+  root to: "empresa#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

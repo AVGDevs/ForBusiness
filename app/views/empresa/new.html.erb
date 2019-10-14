@@ -1,0 +1,8 @@
+<h1>Nova empresa</h1>
+
+<%= form_tag :action => "create" do %>
+    Nome da empresa: <%= text_field :empresa, :nomeEmpresa %> <br/>
+    CNPJ: <%= text_field :empresa, :cnpjEmpresa %> <br/>
+    Status: <%= text_field :empresa, :statusEmpresa %> <br/>
+    <%= submit_tag "Criar" %>
+<% end %>

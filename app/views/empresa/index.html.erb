@@ -1,2 +1,24 @@
-<h1>Empresa#index</h1>
-<p>Find me in app/views/empresa/index.html.erb</p>
+<h1>Empresas</h1>
+
+<table>
+    <tr>
+        <th>Id Empresa</th>
+        <th>Nome da empresa</th>
+        <th>CNPJ</th>
+        <th>Status</th>
+    </tr>
+
+<% @empresa.each do |empresa| %>
+    <tr>
+        <td> <%= empresa.id %> </td>
+        <td> <%= empresa.nomeEmpresa %> </td>
+        <td> <%= empresa.cnpjEmpresa %> </td>
+        <td> <%= empresa.statusEmpresa %> </td>
+        <td> <%= link_to "Mostrar", action: "show", id: empresa %> </td>
+    </tr>
+<% end %>
+</table>
+
+<br>
+
+<%= link_to "Cadastrar nova empresa", controller: "empresa", action: "new" %>
