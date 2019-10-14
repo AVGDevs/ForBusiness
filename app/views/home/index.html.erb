@@ -22,8 +22,8 @@
             <a href="#">Serviços</a>
             <a href="#">Contato</a>
             <a href="#">Sobre nós</a>
-            <a href="colaboradores_backoffice/welcome/index">Área do colaborador</a>
-            <a href="coordenadores_backoffice/welcome/index">Área do gestor</a>
+            <a href="users_backoffice/welcome/index">Área do colaborador</a>
+            <a href="admins_backoffice/welcome/index">Área do gestor</a>
         </div>
     </div>
 
@@ -42,7 +42,17 @@
 
 
         <p>
-    
+            <% if admin_signed_in? %>
+                <p>Admin Esta Logado</p>
+            <% else %>
+                <p>Admin Não Esta Logado</p>
+            <% end %>
+
+            <% if user_signed_in? %>
+                <p>Admin Esta Logado</p>
+            <% else %>
+                <p>Admin Não Esta Logado</p>
+            <% end %>
         </p>
 
     </div>
