@@ -1,0 +1,21 @@
+<h1>Colaborador</h1>
+
+<p>
+    <b>Nome: </b>
+    <%= @colaborador.nomeColaborador %>
+</p>
+
+<p>
+    <b>CPF: </b>
+    <%= @colaborador.cpfColaborador %>
+</p>
+
+<p>
+    <b>Departamento: </b>
+    <%= @colaborador.departamento.nomeDepartamento%>
+</p>
+
+
+<br>
+
+<%= link_to "Voltar", action: "index"%>

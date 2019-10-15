@@ -1,0 +1,6 @@
+<h1>Novo departamento</h1>
+
+<%= form_tag :action => "create" do %>
+    Nome do departamento: <%= text_field :departamento, :nomeDepartamento %> <br/>
+    <%= submit_tag "Criar" %>
+<% end %>

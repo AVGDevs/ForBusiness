@@ -1,6 +1,6 @@
 <h1>Empresas</h1>
 
-<table>
+<table class="table table-striped table-hover">
     <tr>
         <th>Id Empresa</th>
         <th>Nome da empresa</th>
@@ -8,13 +8,14 @@
         <th>Status</th>
     </tr>
 
-<% @empresa.each do |empresa| %>
+<% @empresa.each do |e| %>
     <tr>
-        <td> <%= empresa.id %> </td>
-        <td> <%= empresa.nomeEmpresa %> </td>
-        <td> <%= empresa.cnpjEmpresa %> </td>
-        <td> <%= empresa.statusEmpresa %> </td>
-        <td> <%= link_to "Mostrar", action: "show", id: empresa %> </td>
+        <td> <%= e.id %> </td>
+        <td> <%= e.nomeEmpresa %> </td>
+        <td> <%= e.cnpjEmpresa %> </td>
+        <td> <%= e.statusEmpresa %> </td>
+        <td> <%= link_to "Mostrar", action: "show", id: e %> </td>
+        <td> <%= link_to "Apagar", action: "delete_empresa", id: e %> </td>
     </tr>
 <% end %>
 </table>

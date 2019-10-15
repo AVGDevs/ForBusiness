@@ -1,2 +1,21 @@
-<h1>Departamento#index</h1>
-<p>Find me in app/views/departamento/index.html.erb</p>
+<h1>Departamentos</h1>
+
+<table class="table table-striped table-hover">
+    <tr>
+        <th>Id Departamento</th>
+        <th>Nome do departamento</th>
+    </tr>
+
+<% @departamento.each do |d| %>
+    <tr>
+        <td> <%= d.id %> </td>
+        <td> <%= d.nomeDepartamento %> </td>
+        <td> <%= link_to "Mostrar", action: "show", id: d %> </td>
+        <td> <%= link_to "Apagar", action: "delete_departamento", id: d %> </td>
+    </tr>
+<% end %>
+</table>
+
+<br>
+
+<%= link_to "Cadastrar novo departamento", controller: "departamento", action: "new" %>
