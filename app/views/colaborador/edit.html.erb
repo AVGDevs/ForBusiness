@@ -1,0 +1,8 @@
+<h1>Editar colaborador</h1>
+
+<%= form_tag :action => "edit" do %>
+    Nome do colaborador: <%= text_field :colaborador, :nomeColaborador %> <br>
+    CPF: <%= text_field :colaborador, :cpfColaborador %> <br>
+    <%= collection_select(:colaborador, :departamento_id, Departamento.all, :id, :nomeDepartamento, { include_blank: "Selecione o departamento" }) %> <br>
+    <%= submit_tag "Salvar" %>
+<% end %>

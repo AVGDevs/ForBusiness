@@ -14,7 +14,7 @@
         <td> <%= e.nomeEmpresa %> </td>
         <td> <%= e.cnpjEmpresa %> </td>
         <td> <%= e.statusEmpresa %> </td>
-        <td> <%= link_to "Mostrar", action: "show", id: e %> </td>
+        <td> <%= link_to "Editar", action: "edit", id: e %> </td>
         <td> <%= link_to "Apagar", action: "delete_empresa", id: e %> </td>
     </tr>
 <% end %>

@@ -23,6 +23,17 @@ class EmpresaController < ApplicationController
     redirect_to action: "index"
   end 
 
+  def edit
+    @empresa = Empresa.find(params[:id])
+  end
+
+  def update 
+    @empresa = Empresa.find(params[:id])
+    @empresa.update_attributes empresas_params
+    
+    redirect_to action: "index"
+  end
+
   def delete_empresa
     @empresa = Empresa.find(params[:id])
     @empresa.destroy

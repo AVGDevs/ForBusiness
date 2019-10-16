@@ -23,6 +23,17 @@ class ColaboradorController < ApplicationController
     redirect_to action: "index"
   end 
 
+  def edit
+    @colaborador = Colaborador.find(params[:id])
+  end
+
+  def update 
+    @colaborador = Colaborador.find(params[:id])
+    @colaborador.update_attributes colaboradors_params
+    
+    redirect_to action: "index"
+  end
+
   def delete_colaborador
     @colaborador = Colaborador.find(params[:id])
     @colaborador.destroy

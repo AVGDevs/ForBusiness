@@ -1,0 +1,7 @@
+<h1>Editar tarefa</h1>
+
+<%= form_tag :action => "edit" do %>
+    Nome da tarefa: <%= text_field :tarefa, :nomeTarefa %> <br>
+    <%= collection_select(:tarefa, :departamento_id, Departamento.all, :id, :nomeDepartamento, { include_blank: "Selecione o departamento" }) %> <br>
+    <%= submit_tag "Salvar" %>
+<% end %>

@@ -21,11 +21,22 @@ class DepartamentoController < ApplicationController
     @departamento.save
 
     redirect_to action: "index"
-  end 
+  end
+
+  def edit
+    @departamento = Departamento.find(params[:id])
+  end
+
+  def update 
+    @departamento = Departamento.find(params[:id])
+    @departamento.update_attributes departamento_params
+    
+    redirect_to action: "index"
+  end
 
   def delete_departamento
     @departamento = Departamento.find(params[:id])
-    @departamento.desytroy
+    @departamento.destroy
 
     redirect_to action: "index"
   end

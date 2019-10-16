@@ -1,0 +1,15 @@
+<h1>Tarefa</h1>
+
+<p>
+    <b>Nome da tarefa: </b>
+    <%= @tarefa.nomeTarefa %>
+</p>
+
+<p>
+    <b>Departamento: </b>
+    <%= @tarefa.departamento.nomeDepartamento %>
+</p>
+
+<br>
+
+<%= link_to "Voltar", action: "index"%>

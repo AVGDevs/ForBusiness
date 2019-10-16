@@ -17,6 +17,7 @@ Rails.application.config.assets.precompile += %w(   colaborador.css
                                                     departamento.css
                                                     empresa.css
                                                     home.css
+                                                    tarefa.css
                                                     devise/sessions.css
                                                     admins_backoffice.css
                                                     users_backoffice.css
@@ -28,6 +29,7 @@ Rails.application.config.assets.precompile += %w(   colaborador.js
                                                     departamento.js
                                                     empresa.js
                                                     home.js
+                                                    tarefa.js
                                                     devise/sessions.js
                                                     admins_backoffice.coffee
                                                     users_backoffice.coffee

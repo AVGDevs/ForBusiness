@@ -14,7 +14,7 @@
         <td> <%= c.nomeColaborador %> </td>
         <td> <%= c.cpfColaborador %> </td>
         <td> <%= c.departamento.nomeDepartamento %> </td>
-        <td> <%= link_to "Mostrar", action: "show", id: c %> </td>
+        <td> <%= link_to "Editar", action: "edit", id: c %> </td>
         <td> <%= link_to "Apagar", action: "delete_colaborador", id: c %> </td>
     </tr>
 <% end %>
