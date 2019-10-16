@@ -17,11 +17,19 @@ Rails.application.config.assets.precompile += %w(   colaborador.css
                                                     departamento.css
                                                     empresa.css
                                                     home.css
-                                                    devise/sessions.css)
+                                                    devise/sessions.css
+                                                    admins_backoffice.css
+                                                    users_backoffice.css
+                                                    devise/registrations.scss
+                                                    devise/passwords.scss)
  
 
 Rails.application.config.assets.precompile += %w(   colaborador.js
                                                     departamento.js
                                                     empresa.js
                                                     home.js
-                                                    devise/sessions.js)
+                                                    devise/sessions.js
+                                                    admins_backoffice.coffee
+                                                    users_backoffice.coffee
+                                                    devise/registrations.coffee
+                                                    devise/passwords.coffee)

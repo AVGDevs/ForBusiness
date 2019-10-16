@@ -31,7 +31,7 @@ h1 {
 }
 
 #container-cabecalho {
-  background: rgb(40, 138, 218);
+  background: #4e73df;
   color: black;
   height: 80px;
   padding: 0px 40px;
@@ -43,7 +43,7 @@ h1 {
 }
 
 #login-cabecalho a {
-  color: black;
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
 
@@ -53,8 +53,8 @@ h1 {
 }
 
 #login-cabecalho a:hover{
-  color: #DCDCDC;
-  background: #3d3d3d;
+  color: rgb(0, 0, 0);
+  background: #ffffff;
   padding: 30px 10px;
 }
 

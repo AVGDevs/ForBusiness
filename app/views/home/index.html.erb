@@ -42,17 +42,20 @@
 
 
         <p>
-            <% if admin_signed_in? %>
-                <p>Admin Esta Logado</p>
-            <% else %>
-                <p>Admin Não Esta Logado</p>
-            <% end %>
-
-            <% if user_signed_in? %>
-                <p>Admin Esta Logado</p>
-            <% else %>
-                <p>Admin Não Esta Logado</p>
-            <% end %>
+            <br>
+                <% if admin_signed_in? %>
+                <p>Administrador está logado</p>
+                <p><%= current_admin.email %></p>
+                <% else %>
+                <p>Administrador não está logado</p>
+                <% end %>
+                <br>
+                <% if user_signed_in? %>
+                <p>Usuário está logado</p>
+                <p><%= current_user.email %></p>
+                <% else %>
+                <p>Usuário não está logado</p>  
+                <% end %>
         </p>
 
     </div>
