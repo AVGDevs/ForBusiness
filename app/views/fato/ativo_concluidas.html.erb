@@ -1,21 +1,18 @@
-<h1>Tarefas</h1>
+<h1>Tarefas concluídas</h1>
 
 <table class="table table-striped table-hover">
     <tr>
         <th>Tarefa</th>
         <th>Empresa</th>
         <th>Data de vencimento</th>
-        <th>Status</th>
     </tr>
 
-<% @fato.each do |f| %>
+<% @ativo_concluidas.each do |f| %>
     <tr>
         <td> <%= f.tarefa.nomeTarefa %> </td>
         <td> <%= f.empresa.nomeEmpresa %> </td>
         <td> <%= f.dataVencimentoTarefa %> </td>
-        <td> <%= f.statusTarefa %> </td>
-        <td> <%= link_to "Concluir", action: "concluir_tarefa", id: f %> </td>
-        <td> <%= link_to "Desfazer", action: "desfazer_conclusao", id: f %> </td>
+        <td> <%= link_to "Desfazer", action: "desfazer_ativo", id: f %> </td>
     </tr>
 <% end %>
 </table>
