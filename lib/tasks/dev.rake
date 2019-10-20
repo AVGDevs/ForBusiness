@@ -24,7 +24,7 @@ namespace :dev do
   )
   end
 
-  #desc "Adiciona o administrador extras"
+  #desc "Adiciona o administradores extras"
   #task add_extras_admin: :environment do
   #  10.times do |i|
   #    Admin.create!(
