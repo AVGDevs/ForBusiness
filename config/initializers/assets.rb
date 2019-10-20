@@ -16,6 +16,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w(   colaborador.css
                                                     departamento.css
                                                     empresa.css
+                                                    fato.css
                                                     home.css
                                                     tarefa.css
                                                     devise/sessions.css
@@ -28,6 +29,7 @@ Rails.application.config.assets.precompile += %w(   colaborador.css
 Rails.application.config.assets.precompile += %w(   colaborador.js
                                                     departamento.js
                                                     empresa.js
+                                                    fato.js
                                                     home.js
                                                     tarefa.js
                                                     devise/sessions.js
