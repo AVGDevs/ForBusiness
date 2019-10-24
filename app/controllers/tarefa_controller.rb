@@ -1,4 +1,4 @@
-class TarefaController < ApplicationController
+class TarefaController < AdminsBackofficeController
 
   def tarefas_params
     params.require(:tarefa).permit(:nomeTarefa, :departamento_id)

@@ -1,4 +1,6 @@
-class EmpresaController < ApplicationController
+class EmpresaController < AdminsBackofficeController
+  def index
+  end
   
   def empresas_params
     params.require(:empresa).permit(:nomeEmpresa, :cnpjEmpresa, :statusEmpresa)

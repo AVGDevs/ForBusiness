@@ -22,8 +22,8 @@ Rails.application.config.assets.precompile += %w(   colaborador.css
                                                     devise/sessions.css
                                                     admins_backoffice.css
                                                     users_backoffice.css
-                                                    devise/registrations.scss
-                                                    devise/passwords.scss)
+                                                    devise/registrations.css
+                                                    devise/passwords.css)
  
 
 Rails.application.config.assets.precompile += %w(   colaborador.js

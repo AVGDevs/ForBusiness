@@ -1,4 +1,7 @@
 class FatoController < ApplicationController
+
+  before_action :authenticate_user! 
+  layout 'users_backoffice'
   
   def fatos_params
     params.require(:fato).permit(:statusTarefa, :dataVencimentoTarefa, :tarefa_id, :empresa_id)

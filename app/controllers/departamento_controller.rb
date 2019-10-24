@@ -1,4 +1,4 @@
-class DepartamentoController < ApplicationController
+class DepartamentoController < AdminsBackofficeController
   
   def departamento_params
     params.require(:departamento).permit(:nomeDepartamento)
