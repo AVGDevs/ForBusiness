@@ -13,27 +13,24 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
-Rails.application.config.assets.precompile += %w(   colaborador.css
-                                                    departamento.css
-                                                    empresa.css
-                                                    fato.css
-                                                    home.css
-                                                    tarefa.css
-                                                    devise/sessions.css
-                                                    admins_backoffice.css
-                                                    users_backoffice.css
-                                                    devise/registrations.css
-                                                    devise/passwords.css)
- 
+#app/assets
+Rails.application.config.assets.precompile += %w( admins_backoffice.js         admins_backoffice.css
+                                                  users_backoffice.js          users_backoffice.css
+                                                  colaborador.js               colaborador.css
+                                                  departamento.js              departamento.css
+                                                  empresa.js                   empresa.css
+                                                  fato.js                      fato.css
+                                                  home.js                      home.css
+                                                  tarefa.js                    tarefa.css
+                                                  devise/sessions.js           devise/sessions.css
+                                                  admins_backoffice.coffee     admins_backoffice.css
+                                                  users_backoffice.coffee      users_backoffice.css
+                                                  devise/registrations.coffee  devise/registrations.css
+                                                  devise/passwords.coffee      devise/passwords.css)
 
-Rails.application.config.assets.precompile += %w(   colaborador.js
-                                                    departamento.js
-                                                    empresa.js
-                                                    fato.js
-                                                    home.js
-                                                    tarefa.js
-                                                    devise/sessions.js
-                                                    admins_backoffice.coffee
-                                                    users_backoffice.coffee
-                                                    devise/registrations.coffee
-                                                    devise/passwords.coffee)
+#lib/assets
+Rails.application.config.assets.precompile += %w( sb-admin-2.js   sb-admin-2.css 
+                                                  custom.js       custom.css
+                                                  javascripts/demo
+                                                  img.jpg
+                                                  user.png )
