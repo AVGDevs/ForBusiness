@@ -49,7 +49,7 @@ Rails.application.routes.draw do
   match 'pagamento_recebimento_concluidas' => 'fato#pagamento_recebimento_concluidas', via: 'get'
   match 'pagamento_recebimento_pendentes' => 'fato#pagamento_recebimento_pendentes', via: 'get'
   match 'concluir_pagamento_recebimento' => 'fato#concluir_pagamento_recebimento', via: 'get'
-  match 'desfazer_pagamento_recebimento' => 'fato#concluir_pagamento_recebimento', via: 'get'
+  match 'desfazer_pagamento_recebimento' => 'fato#desfazer_pagamento_recebimento', via: 'get'
 
   match 'estoque_concluidas' => 'fato#estoque_concluidas', via: 'get'
   match 'estoque_pendentes' => 'fato#estoque_pendentes', via: 'get'

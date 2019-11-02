@@ -4,7 +4,7 @@ class FatoController < ApplicationController
   layout 'users_backoffice'
   
   def fatos_params
-    params.require(:fato).permit(:statusTarefa, :dataVencimentoTarefa, :tarefa_id, :empresa_id)
+    params.require(:fato).permit(:statusTarefa, :dataVencimentoTarefa, :tarefa_id, :empresa_id, :executor)
   end
 
   def index
@@ -32,14 +32,14 @@ class FatoController < ApplicationController
 
   def concluir_folha
     @fato = Fato.find(params[:id])
-    @fato.update_attributes(:statusTarefa => "Concluído")
+    @fato.update_attributes(:statusTarefa => "Concluído", :executor => current_user.email)
     
     redirect_to action: "folha_pendentes"
   end
 
   def desfazer_folha
     @fato = Fato.find(params[:id])
-    @fato.update_attributes(:statusTarefa => "Pendente")
+    @fato.update_attributes(:statusTarefa => "Pendente", :executor => current_user.email)
 
     redirect_to action: "folha_concluidas"
   end
@@ -54,14 +54,14 @@ class FatoController < ApplicationController
 
   def concluir_escrita
     @fato = Fato.find(params[:id])
-    @fato.update_attributes(:statusTarefa => "Concluído")
+    @fato.update_attributes(:statusTarefa => "Concluído", :executor => current_user.email)
     
     redirect_to action: "escrita_pendentes"
   end
 
   def desfazer_escrita
     @fato = Fato.find(params[:id])
-    @fato.update_attributes(:statusTarefa => "Pendente")
+    @fato.update_attributes(:statusTarefa => "Pendente", :executor => current_user.email)
 
     redirect_to action: "escrita_concluidas"
   end
@@ -76,14 +76,14 @@ class FatoController < ApplicationController
 
   def concluir_ativo
     @fato = Fato.find(params[:id])
-    @fato.update_attributes(:statusTarefa => "Concluído")
+    @fato.update_attributes(:statusTarefa => "Concluído", :executor => current_user.email)
     
     redirect_to action: "ativo_pendentes"
   end
 
   def desfazer_ativo
     @fato = Fato.find(params[:id])
-    @fato.update_attributes(:statusTarefa => "Pendente")
+    @fato.update_attributes(:statusTarefa => "Pendente", :executor => current_user.email)
 
     redirect_to action: "ativo_concluidas"
   end
@@ -96,18 +96,18 @@ class FatoController < ApplicationController
     @pagamento_recebimento_pendentes = Fato.where("statusTarefa = ? AND (tarefa_id = ? OR tarefa_id = ? OR tarefa_id = ? OR tarefa_id = ?)", "Pendente", 13, 14, 15, 16)
   end
 
-  def concluir_pagamento_recebimentos
+  def concluir_pagamento_recebimento
     @fato = Fato.find(params[:id])
-    @fato.update_attributes(:statusTarefa => "Concluído")
+    @fato.update_attributes(:statusTarefa => "Concluído", :executor => current_user.email)
     
-    redirect_to action: "pagamentos_recebimentos_pendentes"
+    redirect_to action: "pagamento_recebimento_pendentes"
   end
 
-  def desfazer_pagamento_recebimentos
+  def desfazer_pagamento_recebimento
     @fato = Fato.find(params[:id])
-    @fato.update_attributes(:statusTarefa => "Pendente")
+    @fato.update_attributes(:statusTarefa => "Pendente", :executor => current_user.email)
 
-    redirect_to action: "pagamentos_recebimentos_concluidas"
+    redirect_to action: "pagamento_recebimento_concluidas"
   end
 
   def estoque_concluidas
@@ -120,14 +120,14 @@ class FatoController < ApplicationController
 
   def concluir_estoque
     @fato = Fato.find(params[:id])
-    @fato.update_attributes(:statusTarefa => "Concluído")
+    @fato.update_attributes(:statusTarefa => "Concluído", :executor => current_user.email)
     
     redirect_to action: "estoque_pendentes"
   end
 
   def desfazer_estoque
     @fato = Fato.find(params[:id])
-    @fato.update_attributes(:statusTarefa => "Pendente")
+    @fato.update_attributes(:statusTarefa => "Pendente", :executor => current_user.email)
 
     redirect_to action: "estoque_concluidas"
   end

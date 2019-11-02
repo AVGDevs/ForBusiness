@@ -12,7 +12,7 @@
         <td> <%= f.tarefa.nomeTarefa %> </td>
         <td> <%= f.empresa.nomeEmpresa %> </td>
         <td> <%= f.dataVencimentoTarefa %> </td>
-        <td> <%= link_to "Desfazer", action: "desfazer_ativo", id: f %> </td>
+        <td> <%= link_to image_tag("uncheck.png"), action: "desfazer_ativo", id: f %> </td>
     </tr>
 <% end %>
 </table>
