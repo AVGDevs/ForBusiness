@@ -38,7 +38,7 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-       <li class="nav-item">
+       <li class="nav-item active">
         <%= link_to users_backoffice_welcome_index_path, class:"nav-link" do %>
             <i class="fa fa-dashboard fa-fw "></i>
             <span>Dashboard</span>
@@ -54,7 +54,7 @@
       </div>
 
       <!-- Area com separação de departamentos e tarefas  -->
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoFolha" aria-expanded="true" aria-controls="collapseTwoFolha">
           <i class="fa fa-users fa-fw"></i>
           <span>Folha de Pagamento</span>
@@ -67,7 +67,7 @@
           </div>
         </div>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoEscrita" aria-expanded="true" aria-controls="collapseTwoEscrita">
           <i class="fa fa-users fa-fw"></i>
           <span>Escrita Fiscal</span>
@@ -80,7 +80,7 @@
           </div>
         </div>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoAtivo" aria-expanded="true" aria-controls="collapseTwoAtivo">
           <i class="fa fa-users fa-fw"></i>
           <span>Ativo Fixo</span>
@@ -93,7 +93,7 @@
           </div>
         </div>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoPagamentos" aria-expanded="true" aria-controls="collapseTwoPagamentos">
           <i class="fa fa-users fa-fw"></i>
           <span>Pagamento/ Recebimento</span>
@@ -106,7 +106,7 @@
           </div>
         </div>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoEstoque" aria-expanded="true" aria-controls="collapseTwoEstoque">
           <i class="fa fa-users fa-fw"></i>
           <span>Estoque</span>
@@ -246,7 +246,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  <span class="mr-2 d-none d-lg-inline text-gray-600 small">USUÁRIO</span>
+                  <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= current_user.email or current_admin.email %></span>
                   <%= image_tag 'user.png', class:"img-profile rounded-circle" %>
                 </a>
               <!-- Dropdown - User Information -->

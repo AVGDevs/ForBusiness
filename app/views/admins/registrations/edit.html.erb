@@ -32,7 +32,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Alterar a Senha", class:"btn btn-primary btn-user btn-block-small"  %>
   </div>
 <% end %>
 
@@ -40,4 +40,4 @@
 
 <p>Infeliz? <%= button_to "Cancelar minha conta", registration_path(resource_name), data: { confirm: "Você tem certeza?" }, method: :delete %></p>
 
-<%= link_to "Voltar", :back %>
+<% link_to "Voltar", class:"btn btn-primary btn-user btn-block-small", :back %>

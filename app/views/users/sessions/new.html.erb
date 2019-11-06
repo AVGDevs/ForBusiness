@@ -31,30 +31,30 @@
                     <h1 class="h4 text-gray-900 mb-4">Bem Vindo!</h1>
                   </div>
                   <hr>
-                  <div class="caixa-login">
+                  <div class="caixa-login text-center">
 
-                  <h2>Log in - Usuário</h2>
+                  <h2>Usuário</h2>
 
                   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                    <div class="field">
-                      <%= f.label "E-mail" %><br />
+                    <div class="field text-center">
+                      <%= f.label "Email" %><br />
                       <%= f.email_field :email, autocomplete: "email"%>
                     </div>
 
-                    <div class="field">
+                    <div class="field text-center">
                       <%= f.label "Senha" %><br />
                       <%= f.password_field :password, autocomplete: "current-password" %>
                     </div>
 
                     <% if devise_mapping.rememberable? %>
-                      <div class="field">
+                      <div class="field text-center">
                         <%= f.check_box :remember_me %>
                         <%= f.label "Guardar" %>
                       </div>
                     <% end %>
 
                     <div class="actions">
-                      <%= f.submit "Log in" %>
+                      <%= f.submit "Entrar", class:"btn btn-primary btn-user btn-block-small" %>
                     </div>
                    <%end%> 
                   <%= render "users/shared/links" %>

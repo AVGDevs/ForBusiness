@@ -34,7 +34,7 @@
                     <h1 class="h4 text-gray-900 mb-4">Bem Vindo!</h1>
                   </div>
                   <hr>
-                  <div class="caixa-login">
+                  <div class="caixa-login text-center">
 
                   <h2>Criar Conta</h2>
 
@@ -49,7 +49,7 @@
                     <div class="field">
                       <%= f.label :password %>
                       <% if @minimum_password_length %>
-                      <em>(<%= @minimum_password_length %> characters minimum)</em>
+                      <em>(<%= @minimum_password_length %> no Minimo)</em>
                       <% end %><br />
                       <%= f.password_field :password, autocomplete: "new-password" %>
                     </div>
@@ -60,7 +60,7 @@
                     </div>
 
                     <div class="actions">
-                      <%= f.submit "Sign up" %>
+                      <br><%= f.submit "Criar conta", class:"btn btn-primary btn-user btn-block-small" %>
                     </div>
                   <% end %>
 
