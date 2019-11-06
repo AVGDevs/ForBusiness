@@ -4,21 +4,21 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-* {
+body, html {
+  height: 100%;
   margin: 0;
   padding: 0;
 }
 
 body {
-  background: rgb(255, 255, 255)   ;
-  font-family: 'Trebuchet MS', 'Helvtica', sans-serif;
+  background: #C0C0C0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 1em;
 }
 
 p {
   font-size: 1.5em;
   text-align: center;
-  padding: 10px;
 }
 
 h1 {
@@ -31,8 +31,7 @@ h1 {
 }
 
 #container-cabecalho {
-  background: #4e73df;
-  color: black;
+  background: #006eb8;
   height: 80px;
   padding: 0px 40px;
 }
@@ -43,7 +42,6 @@ h1 {
 }
 
 #login-cabecalho a {
-  color: rgb(255, 255, 255);
   text-decoration: none;
 }
 
@@ -53,21 +51,53 @@ h1 {
 }
 
 #login-cabecalho a:hover{
-  color: rgb(0, 0, 0);
-  background: #ffffff;
+  color: #DCDCDC;
+  background: #3d3d3d;
   padding: 30px 10px;
-}
-
-#area-principal {
-  width: 960px;       
-  padding: 1px;
-  margin: 0px auto;
-  background: rgb(255, 255, 255) ;
-  align-items: center;
-  font-size: 12px;
 }
 
 img.centralizada {
   display: block;
   margin: 0 auto;
+}
+
+.area-parallax {
+  background-image: url(asset_path("Estatisticas.jpg"));
+  position: relative;
+  height: 90%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.titulo-parallax {
+  color: #006eb8;
+  font-size: 7em;
+  position: absolute;
+  font-weight: 800;
+  left: 5%;
+  top: 10%; 
+}
+
+.imagem-parallax {
+  position: absolute;
+  left: 55%;
+  top: 10%;
+}
+
+.conteudo {
+  color: #777;
+  background-color: rgb(241, 241, 241);
+  text-align: justify;
+  padding: 50px 80px;
+}
+
+#rodape {
+  font-size: 0.8em;
+  text-align: center;
+  color: white;
+  background: #006eb8;
+  height: 40px;
+  padding-top: 10px;
 }

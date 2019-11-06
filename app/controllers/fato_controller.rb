@@ -32,14 +32,26 @@ class FatoController < ApplicationController
 
   def concluir_folha
     @fato = Fato.find(params[:id])
-    @fato.update_attributes(:statusTarefa => "Concluído", :executor => current_user.email)
+    @fato.update_attributes(:statusTarefa => "Concluído")
     
+    @tarefa_id = params[:id]
+    @email = current_user.email
+    @acao = "Concluiu"
+    log = "INSERT INTO log_usuarios (tarefa_id, email, acao) VALUES (#{@tarefa_id}, '#{@email}', '#{@acao}');"
+    ActiveRecord::Base.connection.execute(log);    
+
     redirect_to action: "folha_pendentes"
   end
 
   def desfazer_folha
     @fato = Fato.find(params[:id])
-    @fato.update_attributes(:statusTarefa => "Pendente", :executor => current_user.email)
+    @fato.update_attributes(:statusTarefa => "Pendente")
+
+    @tarefa_id = params[:id]
+    @email = current_user.email
+    @acao = "Desfez"
+    log = "INSERT INTO log_usuarios (tarefa_id, email, acao) VALUES (#{@tarefa_id}, '#{@email}', '#{@acao}');"
+    ActiveRecord::Base.connection.execute(log);    
 
     redirect_to action: "folha_concluidas"
   end
@@ -54,14 +66,26 @@ class FatoController < ApplicationController
 
   def concluir_escrita
     @fato = Fato.find(params[:id])
-    @fato.update_attributes(:statusTarefa => "Concluído", :executor => current_user.email)
+    @fato.update_attributes(:statusTarefa => "Concluído")
+    
+    @tarefa_id = params[:id]
+    @email = current_user.email
+    @acao = "Concluiu"
+    log = "INSERT INTO log_usuarios (tarefa_id, email, acao) VALUES (#{@tarefa_id}, '#{@email}', '#{@acao}');"
+    ActiveRecord::Base.connection.execute(log);    
     
     redirect_to action: "escrita_pendentes"
   end
 
   def desfazer_escrita
     @fato = Fato.find(params[:id])
-    @fato.update_attributes(:statusTarefa => "Pendente", :executor => current_user.email)
+    @fato.update_attributes(:statusTarefa => "Pendente")
+
+    @tarefa_id = params[:id]
+    @email = current_user.email
+    @acao = "Desfez"
+    log = "INSERT INTO log_usuarios (tarefa_id, email, acao) VALUES (#{@tarefa_id}, '#{@email}', '#{@acao}');"
+    ActiveRecord::Base.connection.execute(log);  
 
     redirect_to action: "escrita_concluidas"
   end
@@ -76,14 +100,26 @@ class FatoController < ApplicationController
 
   def concluir_ativo
     @fato = Fato.find(params[:id])
-    @fato.update_attributes(:statusTarefa => "Concluído", :executor => current_user.email)
+    @fato.update_attributes(:statusTarefa => "Concluído")
+
+    @tarefa_id = params[:id]
+    @email = current_user.email
+    @acao = "Concluiu"
+    log = "INSERT INTO log_usuarios (tarefa_id, email, acao) VALUES (#{@tarefa_id}, '#{@email}', '#{@acao}');"
+    ActiveRecord::Base.connection.execute(log);    
     
     redirect_to action: "ativo_pendentes"
   end
 
   def desfazer_ativo
     @fato = Fato.find(params[:id])
-    @fato.update_attributes(:statusTarefa => "Pendente", :executor => current_user.email)
+    @fato.update_attributes(:statusTarefa => "Pendente")
+
+    @tarefa_id = params[:id]
+    @email = current_user.email
+    @acao = "Desfez"
+    log = "INSERT INTO log_usuarios (tarefa_id, email, acao) VALUES (#{@tarefa_id}, '#{@email}', '#{@acao}');"
+    ActiveRecord::Base.connection.execute(log);  
 
     redirect_to action: "ativo_concluidas"
   end
@@ -98,14 +134,26 @@ class FatoController < ApplicationController
 
   def concluir_pagamento_recebimento
     @fato = Fato.find(params[:id])
-    @fato.update_attributes(:statusTarefa => "Concluído", :executor => current_user.email)
+    @fato.update_attributess(:statusTarefa => "Concluído")
+
+    @tarefa_id = params[:id]
+    @email = current_user.email
+    @acao = "Concluiu"
+    log = "INSERT INTO log_usuarios (tarefa_id, email, acao) VALUES (#{@tarefa_id}, '#{@email}', '#{@acao}');"
+    ActiveRecord::Base.connection.execute(log);
     
     redirect_to action: "pagamento_recebimento_pendentes"
   end
 
   def desfazer_pagamento_recebimento
     @fato = Fato.find(params[:id])
-    @fato.update_attributes(:statusTarefa => "Pendente", :executor => current_user.email)
+    @fato.update_attributes(:statusTarefa => "Pendente")
+
+    @tarefa_id = params[:id]
+    @email = current_user.email
+    @acao = "Desfez"
+    log = "INSERT INTO log_usuarios (tarefa_id, email, acao) VALUES (#{@tarefa_id}, '#{@email}', '#{@acao}');"
+    ActiveRecord::Base.connection.execute(log);  
 
     redirect_to action: "pagamento_recebimento_concluidas"
   end
@@ -120,14 +168,26 @@ class FatoController < ApplicationController
 
   def concluir_estoque
     @fato = Fato.find(params[:id])
-    @fato.update_attributes(:statusTarefa => "Concluído", :executor => current_user.email)
+    @fato.update_attributes(:statusTarefa => "Concluído")
+
+    @tarefa_id = params[:id]
+    @email = current_user.email
+    @acao = "Concluiu"
+    log = "INSERT INTO log_usuarios (tarefa_id, email, acao) VALUES (#{@tarefa_id}, '#{@email}', '#{@acao}');"
+    ActiveRecord::Base.connection.execute(log);    
     
     redirect_to action: "estoque_pendentes"
   end
 
   def desfazer_estoque
     @fato = Fato.find(params[:id])
-    @fato.update_attributes(:statusTarefa => "Pendente", :executor => current_user.email)
+    @fato.update_attributes(:statusTarefa => "Pendente")
+
+    @tarefa_id = params[:id]
+    @email = current_user.email
+    @acao = "Desfez"
+    log = "INSERT INTO log_usuarios (tarefa_id, email, acao) VALUES (#{@tarefa_id}, '#{@email}', '#{@acao}');"
+    ActiveRecord::Base.connection.execute(log);  
 
     redirect_to action: "estoque_concluidas"
   end

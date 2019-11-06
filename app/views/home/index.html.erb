@@ -5,7 +5,8 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>ForBusiness</title>
+    <link rel = "stylesheet" type="text/css" href="index.css">
+    <title>Home</title>
 
 </head>
 
@@ -14,50 +15,41 @@
     <div id="container-cabecalho">
         
         <div id="logo">
-                    <%= image_tag "logo1.png", :height => "80px" %>
+            <%= image_tag("AVG Branco", height: 80, width: 140)%> 
         </div>
         
         <div id="login-cabecalho">
-            <a href="#">Home</a>
-            <a href="#">Serviços</a>
-            <a href="#">Contato</a>
-            <a href="#">Sobre nós</a>
-            <a href="users_backoffice/welcome/index">Área do Usuário</a>
-            <a href="admins_backoffice/welcome/index">Área do Gestor</a>
+            <a href="">Home</a>
+            <a href="">Sobre nós</a>
+            <a href="">Contato</a>
+            <a href="users_backoffice/welcome/index">Área do colaborador</a>
+            <a href="admins_backoffice/welcome/index">Área do gestor</a>
         </div>
     </div>
 
-    <div id="area-principal">
-        <h1>     </h1>
-        
-        <%= image_tag "workflow.png", :class => "centralizada", :height => "400px", :width => "900px" %>
+    <div class="area-parallax">
 
-        <p>
-        Nosso serviço veio com a ideia de trazer mais controle das rotinas de seu escritório trazendo
+        <div class="titulo-parallax">
+            Acessível, <br>
+            Prático, <br>
+            Moderno
+        </div>
+
+        <div class="imagem-parallax">
+            <%= image_tag("AVG Colorido", height: 320, width: 560)%>
+        </div>
+
+    </div>
+
+    <div class="conteudo">
+        <h1>30 ANOS DE TRADIÇÃO</h1>
+        <p>Nosso serviço veio com a ideia de trazer mais controle das rotinas de seu escritório trazendo
         um resumo de situações de todas as tarefas, com agilidade e simplicidade, visando
-        maior rendimento de todos os colaboradores.<br/>
-        
-        Trazendo mais segurança para seu empreendimento, evitando que você perca os prazos de entregas    
-        </p>
+        maior rendimento de todos os colaboradores.</p>
+    </div>
 
-
-        <p>
-            <br>
-                <% if admin_signed_in? %>
-                <p>Gestor está logado</p>
-                <p><%= current_admin.email %></p>
-                <% else %>
-                <p>Gestor não está logado</p>
-                <% end %>
-                <br>
-                <% if user_signed_in? %>
-                <p>Usuário está logado</p>
-                <p><%= current_user.email %></p>
-                <% else %>
-                <p>Usuário não está logado</p>  
-                <% end %>
-        </p>
-
+    <div id="rodape">
+        Todos os direitos reservados, 2019.
     </div>
     
 </body>
