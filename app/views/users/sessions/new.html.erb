@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
 
@@ -8,12 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  
+  
 
   <title>Login</title>
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class='bg-gradient-primary'>
 
   <div class="container">
 
@@ -32,34 +34,34 @@
                   </div>
                   <hr>
                   <div class="caixa-login text-center">
-
                   <h2>Usuário</h2>
+                    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                        <div class="field text-center">
+                        <%= f.label "Email"%><br />
+                        <%= f.email_field :email, autocomplete: "email"%>
+                        </div>
 
-                  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                    <div class="field text-center">
-                      <%= f.label "Email" %><br />
-                      <%= f.email_field :email, autocomplete: "email"%>
+                        <div class="field text-center">
+                        <%= f.label "Senha"%><br />
+                        <%= f.password_field :password, autocomplete: "current-password" %>
+                        </div>
+
+                        <% if devise_mapping.rememberable? %>
+                        <div class="field text-center">
+                            <%= f.check_box :remember_me %>
+                            <%= f.label "Guardar"%>
+                        </div>
+                        <% end %>
+                        
+                        
+
+                        <div class="action">
+                          <%= f.submit "Entrar", class:"btn btn-primary btn-user btn-block-small" %>
+                        </div>
+                        <%end%>
+                     <%= render "admins/shared/links" %>
+
                     </div>
-
-                    <div class="field text-center">
-                      <%= f.label "Senha" %><br />
-                      <%= f.password_field :password, autocomplete: "current-password" %>
-                    </div>
-
-                    <% if devise_mapping.rememberable? %>
-                      <div class="field text-center">
-                        <%= f.check_box :remember_me %>
-                        <%= f.label "Guardar" %>
-                      </div>
-                    <% end %>
-
-                    <div class="actions">
-                      <%= f.submit "Entrar", class:"btn btn-primary btn-user btn-block-small" %>
-                    </div>
-                   <%end%> 
-                  <%= render "users/shared/links" %>
-
-                </div>
                   
                   <hr>
                 </div>
