@@ -29,8 +29,12 @@ Rails.application.config.assets.precompile += %w( admins_backoffice.js         a
                                                   devise/passwords.coffee      devise/passwords.css)
 
 #lib/assets
-Rails.application.config.assets.precompile += %w( sb-admin-2.js   sb-admin-2.css 
-                                                  custom.js       custom.css
-                                                  javascripts/demo
+Rails.application.config.assets.precompile += %w( javascripts/sb-admin-2.js   stylesheets/sb-admin-2.css 
+  javascripts/sb-admin-2.min.js   stylesheets/sb-admin-2.min.css 
+  javascripts/custom.js       stylesheets/custom.css
+                                                  javascripts/demo/chart-area-demo.js
+                                                  javascripts/demo/chart-bar-demo.js
+                                                  javascripts/demo/chart-pie-demo.js
+                                                  javascripts/demo/datatables-demo.js
                                                   img.jpg
-                                                  user.png )
+                                                  user.png)
