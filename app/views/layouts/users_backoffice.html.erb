@@ -70,8 +70,8 @@
           <div id="collapseTwoFolha" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
               <h6 class="collapse-header">Tabelas:</h6>
-              <a class="collapse-item" href="../../folha_concluidas">Tarefas Concluídas</a>
-              <a class="collapse-item" href="../../folha_pendentes">Tarefas Pendentes</a>
+              <a class="collapse-item" <%= link_to "Tarefas concluídas", controller: "fato", action: "index", departamento_id: 1, status_id: 1 %> ></a>
+              <a class="collapse-item" <%= link_to "Tarefas concluídas", controller: "fato", action: "index", departamento_id: 1, status_id: 2 %> ></a>
             </div>
           </div>
         </li>

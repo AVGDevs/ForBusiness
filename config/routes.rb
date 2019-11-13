@@ -56,6 +56,8 @@ Rails.application.routes.draw do
   match 'concluir_estoque' => 'fato#concluir_estoque', via: 'get'
   match 'desfazer_estoque' => 'fato#desfazer_estoque', via: 'get'
 
+  match 'fato/:departamento_id/:status_id/index' => 'fato#index', via: 'get'
+
 
   root to: "home#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

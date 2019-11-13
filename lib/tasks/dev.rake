@@ -13,6 +13,7 @@ namespace :dev do
       show_spinner("Cadastrando empresas") { %x(rails dev:add_default_empresas) }  
       show_spinner("Cadastrando departamentos") { %x(rails dev:add_default_departamentos) }  
       show_spinner("Cadastrando tarefas") { %x(rails dev:add_default_tarefas) }
+      show_spinner("Cadastrando status") { %x(rails dev:add_default_statuses) }
       show_spinner("Cadastrando fatos") { %x(rails dev:add_default_fatos) }    
     else
       puts "Não está em ambiente de desenvolvimento!" 
@@ -60,6 +61,19 @@ namespace :dev do
         ]
     )
   end
+
+  desc "Cria status padrão"
+  task add_default_statuses: :environment do
+    Status.create!(
+      [
+        {status: "Concluído"
+        },
+        {status: "Pendente"
+        }
+      ]
+    )
+  end
+
 
   desc "Cria departamentos padrão"
   task add_default_departamentos: :environment do
@@ -145,406 +159,487 @@ namespace :dev do
   task add_default_fatos: :environment do
     Fato.create! (
       [
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/05",
           tarefa_id: 1,
-          empresa_id: 1
+          empresa_id: 1,
+          departamento_id: 1
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/05",
           tarefa_id: 2,
-          empresa_id: 1
+          empresa_id: 1,
+          departamento_id: 1
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/05",
           tarefa_id: 3,
-          empresa_id: 1
+          empresa_id: 1,
+          departamento_id: 1
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/05",
           tarefa_id: 4,
-          empresa_id: 1
+          empresa_id: 1,
+          departamento_id: 2
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/05",
           tarefa_id: 7,
-          empresa_id: 1
+          empresa_id: 1,
+          departamento_id: 2
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/05",
           tarefa_id: 8,
-          empresa_id: 1
+          empresa_id: 1,
+          departamento_id: 2
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/05",
           tarefa_id: 9,
-          empresa_id: 1
+          empresa_id: 1,
+          departamento_id: 2
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/05",
           tarefa_id: 10,
-          empresa_id: 1
+          empresa_id: 1,
+          departamento_id: 3
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/05",
           tarefa_id: 11,
-          empresa_id: 1
+          empresa_id: 1,
+          departamento_id: 3
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/05",
           tarefa_id: 12,
-          empresa_id: 1
+          empresa_id: 1,
+          departamento_id: 3
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/05",
           tarefa_id: 13,
-          empresa_id: 1
+          empresa_id: 1,
+          departamento_id: 4
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/05",
           tarefa_id: 14,
-          empresa_id: 1
+          empresa_id: 1,
+          departamento_id: 4
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/05",
           tarefa_id: 15,
-          empresa_id: 1
+          empresa_id: 1,
+          departamento_id: 4
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/05",
           tarefa_id: 16,
-          empresa_id: 1
+          empresa_id: 1,
+          departamento_id: 4
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/05",
           tarefa_id: 17,
-          empresa_id: 1
+          empresa_id: 1,
+          departamento_id: 5
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/05",
           tarefa_id: 18,
-          empresa_id: 1
+          empresa_id: 1,
+          departamento_id: 5
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/10",
           tarefa_id: 1,
-          empresa_id: 2
+          empresa_id: 2,
+          departamento_id: 1
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/10",
           tarefa_id: 2,
-          empresa_id: 2
+          empresa_id: 2,
+          departamento_id: 1
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/10",
           tarefa_id: 3,
-          empresa_id: 2
+          empresa_id: 2,
+          departamento_id: 1
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/10",
           tarefa_id: 5,
-          empresa_id: 2
+          empresa_id: 2,
+          departamento_id: 2
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/10",
           tarefa_id: 7,
-          empresa_id: 2
+          empresa_id: 2,
+          departamento_id: 2
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/10",
           tarefa_id: 8,
-          empresa_id: 2
+          empresa_id: 2,
+          departamento_id: 2
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/10",
           tarefa_id: 9,
-          empresa_id: 2
+          empresa_id: 2,
+          departamento_id: 2
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/10",
           tarefa_id: 10,
-          empresa_id: 2
+          empresa_id: 2,
+          departamento_id: 3
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/10",
           tarefa_id: 11,
-          empresa_id: 2
+          empresa_id: 2,
+          departamento_id: 3
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/10",
           tarefa_id: 12,
-          empresa_id: 2
+          empresa_id: 2,
+          departamento_id: 3
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/10",
           tarefa_id: 13,
-          empresa_id: 2
+          empresa_id: 2,
+          departamento_id: 4
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/10",
           tarefa_id: 14,
-          empresa_id: 2
+          empresa_id: 2,
+          departamento_id: 4
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/10",
           tarefa_id: 15,
-          empresa_id: 2
+          empresa_id: 2,
+          departamento_id: 4
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/10",
           tarefa_id: 16,
-          empresa_id: 2
+          empresa_id: 2,
+          departamento_id: 4
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/10",
           tarefa_id: 17,
-          empresa_id: 2
+          empresa_id: 2,
+          departamento_id: 5
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/10",
           tarefa_id: 18,
-          empresa_id: 2
+          empresa_id: 2,
+          departamento_id: 5
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/15",
           tarefa_id: 1,
-          empresa_id: 3
+          empresa_id: 3,
+          departamento_id: 1
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/15",
           tarefa_id: 2,
-          empresa_id: 3
+          empresa_id: 3,
+          departamento_id: 1
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/15",
           tarefa_id: 3,
-          empresa_id: 3
+          empresa_id: 3,
+          departamento_id: 1
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/15",
           tarefa_id: 6,
-          empresa_id: 3
+          empresa_id: 3,
+          departamento_id: 2
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/15",
           tarefa_id: 7,
-          empresa_id: 3
+          empresa_id: 3,
+          departamento_id: 2
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/15",
           tarefa_id: 8,
-          empresa_id: 3
+          empresa_id: 3,
+          departamento_id: 2
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/15",
           tarefa_id: 9,
-          empresa_id: 3
+          empresa_id: 3,
+          departamento_id: 2
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/15",
           tarefa_id: 10,
-          empresa_id: 3
+          empresa_id: 3,
+          departamento_id: 3
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/15",
           tarefa_id: 11,
-          empresa_id: 3
+          empresa_id: 3,
+          departamento_id: 3
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/15",
           tarefa_id: 12,
-          empresa_id: 3
+          empresa_id: 3,
+          departamento_id: 3
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/15",
           tarefa_id: 13,
-          empresa_id: 3
+          empresa_id: 3,
+          departamento_id: 4
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/15",
           tarefa_id: 14,
-          empresa_id: 3
+          empresa_id: 3,
+          departamento_id: 4
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/15",
           tarefa_id: 15,
-          empresa_id: 3
+          empresa_id: 3,
+          departamento_id: 4
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/15",
           tarefa_id: 16,
-          empresa_id: 3
+          empresa_id: 3,
+          departamento_id: 4
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/15",
           tarefa_id: 17,
-          empresa_id: 3
+          empresa_id: 3,
+          departamento_id: 5
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/15",
           tarefa_id: 18,
-          empresa_id: 3
+          empresa_id: 3,
+          departamento_id: 5
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/20",
           tarefa_id: 1,
-          empresa_id: 4
+          empresa_id: 4,
+          departamento_id: 1
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/20",
           tarefa_id: 2,
-          empresa_id: 4
+          empresa_id: 4,
+          departamento_id: 1
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/20",
           tarefa_id: 3,
-          empresa_id: 4
+          empresa_id: 4,
+          departamento_id: 1
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/20",
           tarefa_id: 4,
-          empresa_id: 4
+          empresa_id: 4,
+          departamento_id: 2
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/20",
           tarefa_id: 7,
-          empresa_id: 4
+          empresa_id: 4,
+          departamento_id: 2
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/20",
           tarefa_id: 8,
-          empresa_id: 4
+          empresa_id: 4,
+          departamento_id: 2
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/20",
           tarefa_id: 9,
-          empresa_id: 4
+          empresa_id: 4,
+          departamento_id: 2
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/20",
           tarefa_id: 10,
-          empresa_id: 4
+          empresa_id: 4,
+          departamento_id: 3
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/20",
           tarefa_id: 11,
-          empresa_id: 4
+          empresa_id: 4,
+          departamento_id: 3
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/20",
           tarefa_id: 12,
-          empresa_id: 4
+          empresa_id: 4,
+          departamento_id: 3
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/20",
           tarefa_id: 13,
-          empresa_id: 4
+          empresa_id: 4,
+          departamento_id: 4
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/20",
           tarefa_id: 14,
-          empresa_id: 4
+          empresa_id: 4,
+          departamento_id: 4
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/20",
           tarefa_id: 15,
-          empresa_id: 4
+          empresa_id: 4,
+          departamento_id: 4
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/20",
           tarefa_id: 16,
-          empresa_id: 4
+          empresa_id: 4,
+          departamento_id: 4
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/20",
           tarefa_id: 17,
-          empresa_id: 4
+          empresa_id: 4,
+          departamento_id: 5
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/20",
           tarefa_id: 18,
-          empresa_id: 4
+          empresa_id: 4,
+          departamento_id: 5
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/25",
           tarefa_id: 1,
-          empresa_id: 5
+          empresa_id: 5,
+          departamento_id: 1
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/25",
           tarefa_id: 2,
-          empresa_id: 5
+          empresa_id: 5,
+          departamento_id: 1
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/25",
           tarefa_id: 3,
-          empresa_id: 5
+          empresa_id: 5,
+          departamento_id: 1
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/25",
           tarefa_id: 4,
-          empresa_id: 5
+          empresa_id: 5,
+          departamento_id: 2
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/25",
           tarefa_id: 7,
-          empresa_id: 5
+          empresa_id: 5,
+          departamento_id: 2
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/25",
           tarefa_id: 8,
-          empresa_id: 5
+          empresa_id: 5,
+          departamento_id: 2
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/25",
           tarefa_id: 9,
-          empresa_id: 5
+          empresa_id: 5,
+          departamento_id: 2
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/25",
           tarefa_id: 10,
-          empresa_id: 5
+          empresa_id: 5,
+          departamento_id: 3
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/25",
           tarefa_id: 11,
-          empresa_id: 5
+          empresa_id: 5,
+          departamento_id: 3
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/25",
           tarefa_id: 12,
-          empresa_id: 5
+          empresa_id: 5,
+          departamento_id: 3
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/25",
           tarefa_id: 13,
-          empresa_id: 5
+          empresa_id: 5,
+          departamento_id: 4
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/25",
           tarefa_id: 14,
-          empresa_id: 5
+          empresa_id: 5,
+          departamento_id: 4
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/25",
           tarefa_id: 15,
-          empresa_id: 5
+          empresa_id: 5,
+          departamento_id: 4
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/25",
           tarefa_id: 16,
-          empresa_id: 5
+          empresa_id: 5,
+          departamento_id: 4
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/25",
           tarefa_id: 17,
-          empresa_id: 5
+          empresa_id: 5,
+          departamento_id: 5
         },
-        {statusTarefa: "Pendente",
+        {status_id: 2,
           dataVencimentoTarefa: "2019/01/25",
           tarefa_id: 18,
-          empresa_id: 5
+          empresa_id: 5,
+          departamento_id: 5
         }
+
       ]
     )
   end

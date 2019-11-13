@@ -4,11 +4,11 @@ class FatoController < ApplicationController
   layout 'users_backoffice'
   
   def fatos_params
-    params.require(:fato).permit(:statusTarefa, :dataVencimentoTarefa, :tarefa_id, :empresa_id, :executor)
+    params.require(:fato).permit(:statusTarefa, :dataVencimentoTarefa, :tarefa_id, :empresa_id, :departamento_id)
   end
 
   def index
-    @fato = Fato.order :dataVencimentoTarefa
+    @fato = Fato.where("departamento_id = ? AND status_id = ?", params[:departamento_id], params[:status_id])
   end
 
   def new
@@ -20,6 +20,10 @@ class FatoController < ApplicationController
     @fato.save
 
     redirect_to action: "new"
+  end
+
+  def show
+    @fato = Fato.find(params[:id])
   end
 
   def folha_concluidas

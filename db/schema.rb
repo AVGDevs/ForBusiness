@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_04_223324) do
+ActiveRecord::Schema.define(version: 2019_11_13_204705) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2019_11_04_223324) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "departamento_id"
+    t.integer "user_id"
   end
 
   create_table "departamentos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -47,19 +48,23 @@ ActiveRecord::Schema.define(version: 2019_11_04_223324) do
   end
 
   create_table "fatos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "statusTarefa"
     t.date "dataVencimentoTarefa"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "tarefa_id"
     t.integer "empresa_id"
-    t.string "executor"
+    t.integer "departamento_id"
+    t.integer "status_id"
   end
 
   create_table "log_usuarios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "tarefa_id"
     t.string "email"
     t.string "acao"
+  end
+
+  create_table "statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "status"
   end
 
   create_table "tarefas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
