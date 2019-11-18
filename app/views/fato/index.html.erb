@@ -1,10 +1,12 @@
 <h1>Tarefas</h1>
 
-<table class="table table-striped table-hover">
+<table class="table table-striped table-hover table-responsive-md">
     <tr>
         <th>Tarefa</th>
         <th>Empresa</th>
-        <th>Data de vencimento</th>
+        <th>Data de vencimento </th>
+        <th>Atualizar status</th>
+        <th>Histórico</th>
     </tr>
 
 <% @fato.each do |f| %>
@@ -12,6 +14,8 @@
         <td> <%= f.tarefa.nomeTarefa %> </td>
         <td> <%= f.empresa.nomeEmpresa %> </td>
         <td> <%= f.dataVencimentoTarefa %> </td>
+        <td> <%= f.status_id == 2 ? link_to(image_tag("check.png"), controller: "fato", action: 'concluir_tarefa', id: f)  : link_to(image_tag("uncheck.png"), controller: "fato", action: 'desfazer_conclusao', id: f) %> </td>
+        <td> <%= link_to(image_tag("info.png"), controller: "log_usuario", action: "historico", tarefa_id: f) %> </td>
     </tr>
 <% end %>
 </table>

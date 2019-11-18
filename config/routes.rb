@@ -31,33 +31,12 @@ Rails.application.routes.draw do
   match "tarefa/:id/edit" => "tarefa#update", via: "post"
 
   resources :fato
-  match 'folha_concluidas' => 'fato#folha_concluidas', via: 'get'
-  match 'folha_pendentes' => 'fato#folha_pendentes', via: 'get'
-  match 'concluir_folha' => 'fato#concluir_folha', via: 'get'
-  match 'desfazer_folha' => 'fato#desfazer_folha', via: 'get'
-
-  match 'escrita_concluidas' => 'fato#escrita_concluidas', via: 'get'
-  match 'escrita_pendentes' => 'fato#escrita_pendentes', via: 'get'
-  match 'concluir_escrita' => 'fato#concluir_escrita', via: 'get'
-  match 'desfazer_escrita' => 'fato#desfazer_escrita', via: 'get'
-
-  match 'ativo_concluidas' => 'fato#ativo_concluidas', via: 'get'
-  match 'ativo_pendentes' => 'fato#ativo_pendentes', via: 'get'
-  match 'concluir_ativo' => 'fato#concluir_ativo', via: 'get'
-  match 'desfazer_ativo' => 'fato#desfazer_ativo', via: 'get'
-
-  match 'pagamento_recebimento_concluidas' => 'fato#pagamento_recebimento_concluidas', via: 'get'
-  match 'pagamento_recebimento_pendentes' => 'fato#pagamento_recebimento_pendentes', via: 'get'
-  match 'concluir_pagamento_recebimento' => 'fato#concluir_pagamento_recebimento', via: 'get'
-  match 'desfazer_pagamento_recebimento' => 'fato#desfazer_pagamento_recebimento', via: 'get'
-
-  match 'estoque_concluidas' => 'fato#estoque_concluidas', via: 'get'
-  match 'estoque_pendentes' => 'fato#estoque_pendentes', via: 'get'
-  match 'concluir_estoque' => 'fato#concluir_estoque', via: 'get'
-  match 'desfazer_estoque' => 'fato#desfazer_estoque', via: 'get'
-
   match 'fato/:departamento_id/:status_id/index' => 'fato#index', via: 'get'
+  match 'fato/:id/concluir_tarefa' => 'fato#concluir_tarefa', via: 'get'
+  match 'fato/:id/desfazer_conclusao' => 'fato#desfazer_conclusao', via: 'get'
 
+  resources :log_usuario
+  match 'log_usuario/:tarefa_id/historico' => 'log_usuario#historico', via: 'get'
 
   root to: "home#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
