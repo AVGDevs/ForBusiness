@@ -1,4 +1,4 @@
-class FatoController < ApplicationController
+class UsersBackoffice::FatoController < UsersBackofficeController
 
   before_action :authenticate_user! 
   layout 'users_backoffice'
