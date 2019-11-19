@@ -69,9 +69,9 @@
           </a>
           <div id="collapseTwoFolha" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <h6 class="collapse-header">Tabelas:</h6>
-              <a class="collapse-item" <%= link_to "Tarefas concluídas", controller: "fato", action: "index", departamento_id: 1, status_id: 1 %> ></a>
-              <a class="collapse-item" <%= link_to "Tarefas concluídas", controller: "fato", action: "index", departamento_id: 1, status_id: 2 %> ></a>
+              <h6 class="collapse-header">Status:</h6>
+              <%= link_to "Tarefas concluídas", {controller: "fato", action: "index", departamento_id: 1, status_id: 1}, class: "collapse-item" %>
+              <%= link_to "Tarefas pendentes", {controller: "fato", action: "index", departamento_id: 1, status_id: 2}, class: "collapse-item" %> 
             </div>
           </div>
         </li>
@@ -82,9 +82,9 @@
           </a>
           <div id="collapseTwoEscrita" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <h6 class="collapse-header">Tabelas:</h6>
-              <a class="collapse-item" href="../../escrita_concluidas">Tarefas Concluídas</a>
-              <a class="collapse-item" href="../../escrita_pendentes">Tarefas Pendentes</a>
+              <h6 class="collapse-header">Status:</h6>
+              <%= link_to "Tarefas concluídas", {controller: "fato", action: "index", departamento_id: 2, status_id: 1}, class: "collapse-item" %>
+              <%= link_to "Tarefas pendentes", {controller: "fato", action: "index", departamento_id: 2, status_id: 2}, class: "collapse-item" %>
             </div>
           </div>
         </li>
@@ -95,9 +95,9 @@
           </a>
           <div id="collapseTwoAtivo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <h6 class="collapse-header">Tabelas:</h6>
-              <a class="collapse-item" href="../../ativo_concluidas">Tarefas Concluídas</a>
-              <a class="collapse-item" href="../../ativo_pendentes">Tarefas Pendentes</a>
+              <h6 class="collapse-header">Status:</h6>
+              <%= link_to "Tarefas concluídas", {controller: "fato", action: "index", departamento_id: 3, status_id: 1}, class: "collapse-item" %>
+              <%= link_to "Tarefas pendentes", {controller: "fato", action: "index", departamento_id: 3, status_id: 2}, class: "collapse-item" %>
             </div>
           </div>
         </li>
@@ -108,9 +108,9 @@
           </a>
           <div id="collapseTwoPagamentos" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <h6 class="collapse-header">Tabelas:</h6>
-            <a class="collapse-item" href="../../pagamento_recebimento_concluidas">Tarefas Concluídas</a>
-              <a class="collapse-item" href="../../pagamento_recebimento_pendentes">Tarefas Pendentes</a>
+              <h6 class="collapse-header">Status:</h6>
+              <%= link_to "Tarefas concluídas", {controller: "fato", action: "index", departamento_id: 4, status_id: 1}, class: "collapse-item" %>
+              <%= link_to "Tarefas pendentes", {controller: "fato", action: "index", departamento_id: 4, status_id: 2}, class: "collapse-item" %>
             </div>
           </div>
         </li>
@@ -121,9 +121,9 @@
           </a>
           <div id="collapseTwoEstoque" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <h6 class="collapse-header">Tabelas:</h6>
-              <a class="collapse-item" href="../../estoque_concluidas">Tarefas Concluídas</a>
-              <a class="collapse-item" href="../../estoque_pendentes">Tarefas Pendentes</a>
+              <h6 class="collapse-header">Status:</h6>
+              <%= link_to "Tarefas concluídas", {controller: "fato", action: "index", departamento_id: 5, status_id: 1}, class: "collapse-item" %>
+              <%= link_to "Tarefas pendentes", {controller: "fato", action: "index", departamento_id: 5, status_id: 2}, class: "collapse-item" %>
             </div>
           </div>
         </li>
@@ -275,7 +275,10 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
+<<<<<<< HEAD
           
+=======
+>>>>>>> 1be3aef9bb6bb58de43138ebb784ba0484c4874f
           <%= yield %>
 
         </div>

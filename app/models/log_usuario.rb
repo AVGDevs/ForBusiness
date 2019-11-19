@@ -1,0 +1,2 @@
+class LogUsuario < ApplicationRecord
+end
