@@ -1,4 +1,4 @@
-class ColaboradorController < ApplicationController
+class ColaboradorController < AdminsBackofficeController
 
   def colaboradors_params
     params.require(:colaborador).permit(:nomeColaborador, :cpfColaborador, :setorColaborador, :departamento_id)

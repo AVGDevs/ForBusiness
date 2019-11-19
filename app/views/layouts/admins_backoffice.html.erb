@@ -168,7 +168,7 @@
             <% end %>
         </li>
         <li class="nav-item active">
-           <% link_to colaborador_index_path, class:"nav-link" do %>
+           <%= link_to colaborador_index_path, class:"nav-link" do %>
             <i class="chart-area"></i>
             <span>Colaborador</span></a>
             <% end %>
@@ -176,10 +176,10 @@
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
-      <!-- Sidebar Toggler (Sidebar) -->
+      <!-- Sidebar Toggler (Sidebar) 
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
+      </div>-->
 
     </ul>
     <!-- End of Sidebar -->
@@ -278,7 +278,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Dashboard do Gestor</h1>
+          
           <%= yield %>
 
         </div>

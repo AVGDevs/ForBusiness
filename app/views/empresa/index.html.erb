@@ -1,25 +1,53 @@
-<h1>Empresas</h1>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Gestor | ForBusiness</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %> 
+    <%= stylesheet_link_tag    'application' %>
+    <%= stylesheet_link_tag    'admins_backoffice' %>
 
-<table class="table table-striped table-hover">
-    <tr>
-        <th>Id Empresa</th>
-        <th>Nome da empresa</th>
-        <th>CNPJ</th>
-        <th>Status</th>
-    </tr>
+    <style type="text/css">/* Chart.js */
+      @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}
+    </style>
 
-<% @empresa.each do |e| %>
-    <tr>
-        <td> <%= e.id %> </td>
-        <td> <%= e.nomeEmpresa %> </td>
-        <td> <%= e.cnpjEmpresa %> </td>
-        <td> <%= e.statusEmpresa %> </td>
-        <td> <%= link_to "Editar", action: "edit", id: e %> </td>
-        <td> <%= link_to "Apagar", action: "delete_empresa", id: e %> </td>
-    </tr>
-<% end %>
-</table>
+  </head>
 
-<br>
+  <body>
+    <h1>Empresas</h1>
+      <table class="table table-striped table-hover">
+            <tr class="text-center">
+                <th>Id Empresa</th>
+                <th>Nome da empresa</th>
+                <th>CNPJ</th>
+                <th>Status</th>
+                <th>Editar</th>
+                <th>Excluir</th>
+            </tr>
+        <% @empresa.each do |e| %>
+            <tr class="text-center active">
+                <td> <%= e.id %> </td>
+                <td> <%= e.nomeEmpresa %> </td>
+                <td> <%= e.cnpjEmpresa %> </td>
+                <td> <%= e.statusEmpresa %> </td>
+                <td> <%= link_to image_tag("edit.png"), action: "edit", id: e %> </td>
+                <td> <%= link_to image_tag("del.png"), action: "delete_empresa", id: e %> </td>
+            </tr>
+        <% end %>
+      </table>
+      <br>
+      <div>
+        Adicionar Empresa: 
+          <td><%= link_to image_tag("new.png"), {controller: "empresa", action: "new"} %> </td> 
+      </div>
 
-<%= link_to "Cadastrar nova empresa", controller: "empresa", action: "new" %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'admins_backoffice' %>
+
+  </body>
+
+</html>
