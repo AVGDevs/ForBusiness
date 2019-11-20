@@ -1399,6 +1399,7 @@ pre code {
 .table-bordered th,
 .table-bordered td {
   border: 1px solid #e3e6f0;
+  text-align: center;
 }
 
 .table-bordered thead th,

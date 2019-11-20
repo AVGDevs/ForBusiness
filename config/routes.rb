@@ -2,14 +2,12 @@ Rails.application.routes.draw do
 
   namespace :users_backoffice do
     get "welcome/index"
-    get 'fato/:departamento_id/:status_id/index' => 'fato#index'
     resources :fato
       match 'fato/:departamento_id/:status_id/index' => 'fato#index', via: 'get'
       match 'fato/:id/concluir_tarefa' => 'fato#concluir_tarefa', via: 'get'
-      match 'fato/:id/desfazer_conclusao' => 'fato#desfazer_conclusao', via: 'get'
+      match 'fato/:id/desfazer_conclusao' => 'fato#desfazer_conclusao', via: 'post'
     resources :log_usuario
       match 'log_usuario/:tarefa_id/historico' => 'log_usuario#historico', via: 'get'
-    
   end
 
   namespace :admins_backoffice do
@@ -37,9 +35,6 @@ Rails.application.routes.draw do
   resources :tarefa
   match "delete_tarefa" => "tarefa#delete_tarefa", via: "get"
   match "tarefa/:id/edit" => "tarefa#update", via: "post"
-
-  
-
   
   root to: "home#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

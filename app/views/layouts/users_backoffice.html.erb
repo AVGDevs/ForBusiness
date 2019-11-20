@@ -7,12 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>Usuário | ForBusiness</title>
-
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %> 
@@ -22,7 +17,6 @@
     <!-- Custom fonts for this template-->
 
     <style type="text/css">/* Chart.js */
-      @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}
     </style>
   </head>
 
@@ -36,10 +30,7 @@
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fa fa-codepen fa-fw"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">ForBusiness</div>
+        <%= image_tag("AVG Branco", size: "100x50") %>
       </a>
 
       <!-- Divider -->
@@ -58,8 +49,8 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-          Tarefas dos Departamentos
-        </div>
+          Departamentos
+      </div>
 
         <!-- Area com separação de departamentos e tarefas  -->
         <li class="nav-item active">
@@ -104,7 +95,7 @@
         <li class="nav-item active">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoPagamentos" aria-expanded="true" aria-controls="collapseTwoPagamentos">
             <i class="fa fa-users "></i>
-            <span>Pagamento/ Recebimento</span>
+            <span>Pgto/Recebimento</span>
           </a>
           <div id="collapseTwoPagamentos" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
@@ -254,7 +245,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= current_user.email or current_admin.email %></span>
+                  <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= current_user.email %></span>
                   <%= image_tag 'user.png', class:"img-profile rounded-circle" %>
                 </a>
               <!-- Dropdown - User Information -->
@@ -288,7 +279,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span>Copyright &copy; AVG Devs 2019</span>
           </div>
         </div>
       </footer>
@@ -318,7 +309,7 @@
         <div class="modal-body">Selecione "Logout" abaixo se você estiver pronto para terminar sua sessão atual.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-          <a class="btn btn-primary" <%= link_to  "Sair", destroy_admin_session_path, method: :delete %> </a>
+          <a class="btn btn-primary" <%= link_to  "Sair", destroy_user_session_path, method: :delete %> </a>
         </div>
       </div>
     </div>
@@ -328,12 +319,3 @@
   <%= javascript_include_tag 'users_backoffice' %>
 
 </body>
-
-</html>
-
-
-    <%= javascript_include_tag 'application' %>
-
-  </head>
-
-</html>

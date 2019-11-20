@@ -6,8 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-Time::DATE_FORMATS[:default] = "%d/%m/%Y %H:%M"
-Date::DATE_FORMATS[:default] = "%d/%m/%Y"
+#Time::DATE_FORMATS[:default] = "%d/%m/%Y %H:%M"
+#Date::DATE_FORMATS[:default] = "%d/%m/%Y"
 
 module ForBusiness
   class Application < Rails::Application
