@@ -15,7 +15,7 @@
             <td> <%= f.tarefa.nomeTarefa %> </td>
             <td> <%= f.empresa.nomeEmpresa %> </td>
             <td> <%= f.dataVencimentoTarefa %> </td>
-            <td> <%= f.status_id == 2 ? link_to("", {controller: "fato", action: 'concluir_tarefa', id: f}, class: "fas fa-check-circle fa-lg")  : link_to("", {controller: "fato", action: 'concluir_tarefa', id: f}, class: "fas fa-times-circle fa-lg") %> </td>
+            <td> <%= f.status_id == 2 ? link_to("", {controller: "fato", action: 'concluir_tarefa', id: f}, class: "fas fa-check-circle fa-lg")  : link_to("", {controller: "fato", action: 'desfazer_conclusao', id: f}, class: "fas fa-times-circle fa-lg") %> </td>
             <td> <%= link_to("", {controller: "log_usuario", action: "historico", tarefa_id: f}, class: "fas fa-info-circle fa-lg") %> </td>
         </tr>
     <% end %>
