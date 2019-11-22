@@ -62,8 +62,8 @@ $ bundle install
 
 
 		Autores
-Amauri Nogueira – Banco de Dados<br/>
-Eryk Scarabello Dias – Programador<br/>
-Fernando Carvalho de Andrade – Documentação<br/>
-Kalil Zufanetti Santos – Programador<br/>
-Vinicius Augusto Romero – Documentação<br/>
+Amauri Nogueira (19001056) – Banco de Dados<br/>
+Eryk Scarabello Dias (19001055) – Programador<br/>
+Fernando Carvalho de Andrade (19000576) – Documentação<br/>
+Kalil Zufanetti Santos (19000831) – Programador<br/>
+Vinicius Augusto Romero (19000983) – Documentação<br/>
