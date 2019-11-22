@@ -15,6 +15,9 @@
     <%= stylesheet_link_tag    'application' %>
     <%= stylesheet_link_tag    'admins_backoffice' %>
     <!-- Custom fonts for this template-->
+
+    <style type="text/css">/* Chart.js */
+    </style>
   </head>
 
   <body id="page-top">
@@ -57,9 +60,9 @@
             </a>
             <div id="collapseTwoFolha" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Tabelas:</h6>
-                <a class="collapse-item" href="../../folha_concluidas">Tarefas Concluídas</a>
-                <a class="collapse-item" href="../../folha_pendentes">Tarefas Pendentes</a>
+                <h6 class="collapse-header">Status:</h6>
+                <%= link_to "Tarefas concluídas", {controller: "users_backoffice/fato", action: "index", departamento_id: 1, status_id: 1}, class: "collapse-item" %>
+                <%= link_to "Tarefas pendentes", {controller: "users_backoffice/fato", action: "index", departamento_id: 1, status_id: 2}, class: "collapse-item" %> 
               </div>
             </div>
           </li>
@@ -70,9 +73,9 @@
             </a>
             <div id="collapseTwoEscrita" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Tabelas:</h6>
-                <a class="collapse-item" href="../../escrita_concluidas">Tarefas Concluídas</a>
-                <a class="collapse-item" href="../../escrita_pendentes">Tarefas Pendentes</a>
+                <h6 class="collapse-header">Status:</h6>
+                <%= link_to "Tarefas concluídas", {controller: "users_backoffice/fato", action: "index", departamento_id: 2, status_id: 1}, class: "collapse-item" %>
+                <%= link_to "Tarefas pendentes", {controller: "users_backoffice/fato", action: "index", departamento_id: 2, status_id: 2}, class: "collapse-item" %>
               </div>
             </div>
           </li>
@@ -83,22 +86,22 @@
             </a>
             <div id="collapseTwoAtivo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Tabelas:</h6>
-                <a class="collapse-item" href="../../ativo_concluidas">Tarefas Concluídas</a>
-                <a class="collapse-item" href="../../ativo_pendentes">Tarefas Pendentes</a>
+                <h6 class="collapse-header">Status:</h6>
+                <%= link_to "Tarefas concluídas", {controller: "users_backoffice/fato", action: "index", departamento_id: 3, status_id: 1}, class: "collapse-item" %>
+                <%= link_to "Tarefas pendentes", {controller: "users_backoffice/fato", action: "index", departamento_id: 3, status_id: 2}, class: "collapse-item" %>
               </div>
             </div>
           </li>
           <li class="nav-item active">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoPagamentos" aria-expanded="true" aria-controls="collapseTwoPagamentos">
               <i class="fa fa-users "></i>
-              <span>Pagamento/ Recebimento</span>
+              <span>Pgto/ Recebimento</span>
             </a>
             <div id="collapseTwoPagamentos" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Tabelas:</h6>
-              <a class="collapse-item" href="../../pagamento_recebimento_concluidas">Tarefas Concluídas</a>
-                <a class="collapse-item" href="../../pagamento_recebimento_pendentes">Tarefas Pendentes</a>
+                <h6 class="collapse-header">Status:</h6>
+                <%= link_to "Tarefas concluídas", {controller: "users_backoffice/fato", action: "index", departamento_id: 4, status_id: 1}, class: "collapse-item" %>
+                <%= link_to "Tarefas pendentes", {controller: "users_backoffice/fato", action: "index", departamento_id: 4, status_id: 2}, class: "collapse-item" %>
               </div>
             </div>
           </li>
@@ -109,9 +112,9 @@
             </a>
             <div id="collapseTwoEstoque" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Tabelas:</h6>
-                <a class="collapse-item" href="../../estoque_concluidas">Tarefas Concluídas</a>
-                <a class="collapse-item" href="../../estoque_pendentes">Tarefas Pendentes</a>
+                <h6 class="collapse-header">Status:</h6>
+                <%= link_to "Tarefas concluídas", {controller: "users_backoffice/fato", action: "index", departamento_id: 5, status_id: 1}, class: "collapse-item" %>
+                <%= link_to "Tarefas pendentes", {controller: "users_backoffice/fato", action: "index", departamento_id: 5, status_id: 2}, class: "collapse-item" %>
               </div>
             </div>
           </li>-->
@@ -164,11 +167,10 @@
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
 
-        <!-- Sidebar Toggler (Sidebar) 
+        <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
           <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>-->
-
+        </div>
       </ul>
       <!-- End of Sidebar -->
 
@@ -309,7 +311,7 @@
           <div class="modal-body">Selecione "Sair" abaixo se você estiver pronto para terminar sua sessão atual.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-            <a class="btn btn-primary"> <%= link_to "Sair", destroy_admin_session_path, method: :delete %> </a>
+            <%= link_to "Sair", destroy_admin_session_path, method: :delete, class:"btn btn-primary" %>
           </div>
         </div>
       </div>
