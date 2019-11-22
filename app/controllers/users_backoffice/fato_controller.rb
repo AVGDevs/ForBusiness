@@ -37,14 +37,14 @@ class UsersBackoffice::FatoController < UsersBackofficeController
     @fato = Fato.find(params[:id])
     @fato.update_attribute(:status_id, 1)
     registrar_log("Concluiu")
-    redirect_back fallback_location: {controller: 'fato', action: 'index' }
+    redirect_back fallback_location: {controller: 'users_backoffice/fato', action: 'index' }
   end
 
   def desfazer_conclusao
     @fato = Fato.find(params[:id])
     @fato.update_attribute(:status_id, 2)
     registrar_log("Desfez")
-    redirect_back fallback_location: {controller: 'fato', action: 'index' }
+    redirect_back fallback_location: {controller: 'users_backoffice/fato', action: 'index' }
   end
 
 end

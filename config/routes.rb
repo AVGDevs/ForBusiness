@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :fato
       match 'fato/:departamento_id/:status_id/index' => 'fato#index', via: 'get'
       match 'fato/:id/concluir_tarefa' => 'fato#concluir_tarefa', via: 'get'
-      match 'fato/:id/desfazer_conclusao' => 'fato#desfazer_conclusao', via: 'post'
+      match 'fato/:id/desfazer_conclusao' => 'fato#desfazer_conclusao', via: 'get'
     resources :log_usuario
       match 'log_usuario/:tarefa_id/historico' => 'log_usuario#historico', via: 'get'
   end
