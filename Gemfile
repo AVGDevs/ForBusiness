@@ -41,6 +41,11 @@ gem 'tty-spinner'
 gem 'coffee-script-source'
 gem 'execjs'
 gem 'dotenv-rails'
+gem 'rspec-rails', '~> 3.9'
+
+group :test, :development do
+  gem 'rspec-rails', '~> 3.9'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
