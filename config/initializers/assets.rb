@@ -21,12 +21,10 @@ Rails.application.config.assets.precompile += %w( admins_backoffice.js         a
                                                   empresa.js                   empresa.css
                                                   fato.js                      fato.css
                                                   home.js                      home.css
-                                                  tarefa.js                    tarefa.css
-                                                  devise/sessions.js           devise/sessions.css
-                                                  admins_backoffice.coffee     admins_backoffice.css
-                                                  users_backoffice.coffee      users_backoffice.css
+                                                  tarefa.js                    tarefa.css                                                  
                                                   devise/registrations.coffee  devise/registrations.css
-                                                  devise/passwords.coffee      devise/passwords.css)
+                                                  devise/passwords.coffee      devise/passwords.css
+                                                  devise/sessions.js           devise/sessions.css)
 
 #lib/assets
 Rails.application.config.assets.precompile += %w( javascripts/sb-admin-2.js   stylesheets/sb-admin-2.css 

@@ -56,10 +56,12 @@
                         
 
                         <div class="action">
-                          <%= f.submit "Entrar", class:"btn btn-primary btn-user btn-block-small" %>
+                          <%= link_to "Voltar", root_path, class:"btn btn-primary btn-user btn-block-small"	%> <%= f.submit "Entrar", class:"btn btn-primary btn-user btn-block-small" %>
                         </div>
+
+                        <%= render "admins/shared/links" %>
                         <%end%>
-                     <%= render "admins/shared/links" %>
+                     
 
                     </div>
                   
