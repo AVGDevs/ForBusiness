@@ -79,15 +79,20 @@ namespace :dev do
   task add_default_departamentos: :environment do
     Departamento.create! (
       [
-        {nomeDepartamento: "Folha de pagamento"
+        { nomeDepartamento: "Folha de pagamento",
+         abreviacao: "Fol"
         },
-        {nomeDepartamento: "Escrita fiscal"
+        {nomeDepartamento: "Escrita fiscal",
+         abreviacao: "Esc"
         },
-        {nomeDepartamento: "Ativo fixo"
+        {nomeDepartamento: "Ativo fixo",
+         abreviacao: "Ati"
         },
-        {nomeDepartamento: "Pagamentos e recebimentos"
+        {nomeDepartamento: "Pgto e Recebimento",
+         abreviacao: "Pgt"
         },
-        {nomeDepartamento: "Estoque"
+        {nomeDepartamento: "Estoque",
+         abreviacao: "Est"
         }
       ]
     )

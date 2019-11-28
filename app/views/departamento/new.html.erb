@@ -1,7 +1,7 @@
-<%= stylesheet_link_tag    'empresa' %>
-
 <h3>Novo Departamento</h3>
+
 <%= form_tag :action => "create" do %>
-    Nome do departamento: <%= text_field :departamento, :nomeDepartamento %> <br/>
-    <%= submit_tag "Criar" %>
+    Nome do departamento: <br> <%= text_field(:departamento, :nomeDepartamento, class: "form-control form-control-sm") %> <br/>
+    Abreviação: <br> <%= text_field(:departamento, :abreviacao, class: "form-control form-control-sm") %> <br>
+    <%= submit_tag("Criar", class: "btn btn-primary btn-sm") %> <%= link_to("Voltar", {action: "index"}, class: "btn btn-primary btn-sm")%>
 <% end %>

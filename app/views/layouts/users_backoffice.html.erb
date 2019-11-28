@@ -52,114 +52,22 @@
         </div>
 
           <!-- Area com separação de departamentos e tarefas  -->
+        <% menu_lateral.each do |d| %>
           <li class="nav-item active">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoFolha" aria-expanded="true" aria-controls="collapseTwoFolha">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#<%= d[2] %>" aria-expanded="true">
               <i class="fa fa-users"></i>
-              <span>Folha de Pagamento</span>
+              <span> <%= d[1] %> </span>
             </a>
-            <div id="collapseTwoFolha" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div id="<%= d[2] %>" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Status:</h6>
-                <%= link_to "Tarefas concluídas", {controller: "fato", action: "index", departamento_id: 1, status_id: 1}, class: "collapse-item" %>
-                <%= link_to "Tarefas pendentes", {controller: "fato", action: "index", departamento_id: 1, status_id: 2}, class: "collapse-item" %> 
+                <%= link_to "Tarefas concluídas", {controller: "fato", action: "index", departamento_id: d[0], status_id: 1}, class: "collapse-item" %>
+                <%= link_to "Tarefas pendentes", {controller: "fato", action: "index", departamento_id: d[0], status_id: 2}, class: "collapse-item" %> 
               </div>
             </div>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoEscrita" aria-expanded="true" aria-controls="collapseTwoEscrita">
-              <i class="fa fa-users "></i>
-              <span>Escrita Fiscal</span>
-            </a>
-            <div id="collapseTwoEscrita" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-              <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Status:</h6>
-                <%= link_to "Tarefas concluídas", {controller: "fato", action: "index", departamento_id: 2, status_id: 1}, class: "collapse-item" %>
-                <%= link_to "Tarefas pendentes", {controller: "fato", action: "index", departamento_id: 2, status_id: 2}, class: "collapse-item" %>
-              </div>
-            </div>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoAtivo" aria-expanded="true" aria-controls="collapseTwoAtivo">
-              <i class="fa fa-users "></i>
-              <span>Ativo Fixo</span>
-            </a>
-            <div id="collapseTwoAtivo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-              <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Status:</h6>
-                <%= link_to "Tarefas concluídas", {controller: "fato", action: "index", departamento_id: 3, status_id: 1}, class: "collapse-item" %>
-                <%= link_to "Tarefas pendentes", {controller: "fato", action: "index", departamento_id: 3, status_id: 2}, class: "collapse-item" %>
-              </div>
-            </div>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoPagamentos" aria-expanded="true" aria-controls="collapseTwoPagamentos">
-              <i class="fa fa-users "></i>
-              <span>Pgto/ Recebimento</span>
-            </a>
-            <div id="collapseTwoPagamentos" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-              <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Status:</h6>
-                <%= link_to "Tarefas concluídas", {controller: "fato", action: "index", departamento_id: 4, status_id: 1}, class: "collapse-item" %>
-                <%= link_to "Tarefas pendentes", {controller: "fato", action: "index", departamento_id: 4, status_id: 2}, class: "collapse-item" %>
-              </div>
-            </div>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoEstoque" aria-expanded="true" aria-controls="collapseTwoEstoque">
-              <i class="fa fa-users "></i>
-              <span>Estoque</span>
-            </a>
-            <div id="collapseTwoEstoque" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-              <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Status:</h6>
-                <%= link_to "Tarefas concluídas", {controller: "fato", action: "index", departamento_id: 5, status_id: 1}, class: "collapse-item" %>
-                <%= link_to "Tarefas pendentes", {controller: "fato", action: "index", departamento_id: 5, status_id: 2}, class: "collapse-item" %>
-              </div>
-            </div>
-          </li>
-
-        <!-- Divider 
-        <hr class="sidebar-divider">
-
-        <!--Heading
-        <div class="sidebar-heading">
-          Addons
-        </div>
-
-        <!--Nav Item - Pages Collapse Menu 
-        <li class="nav-item active">
-          <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
-          </a>
-          <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-              <h6 class="collapse-header">Login Screens:</h6>
-              <a class="collapse-item" href="login.html">Login</a>
-              <a class="collapse-item" href="register.html">Register</a>
-              <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-              <div class="collapse-divider"></div>
-              <h6 class="collapse-header">Other Pages:</h6>
-              <a class="collapse-item" href="404.html">404 Page</a>
-              <a class="collapse-item active" href="blank.html">Blank Page</a>
-            </div>
-          </div>
-        </li>
-
-        <!-- Nav Item - Charts 
-        <li class="nav-item">
-          <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
-        </li>
-
-        <!-- Nav Item - Tables 
-        <li class="nav-item">
-          <a class="nav-link" href="tables.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
-        </li>
-  -->
+        <% end %>
+          
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
 

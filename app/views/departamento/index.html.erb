@@ -4,6 +4,7 @@
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <tr>
             <th>Nome do departamento</th>
+            <th>Abreviação</th>
             <th>Editar</th>
             <th>Excluir</th>
         </tr>
@@ -11,6 +12,7 @@
     <% @departamento.each do |d| %>
         <tr>
             <td> <%= d.nomeDepartamento %> </td>
+            <td> <%= d.abreviacao %> </td>
             <td> <%= link_to("", {action: "edit", id: d}, class: "fas fa-edit fa-lg") %> </td>
             <td> <%= link_to("", {action: "delete_departamento", id: d}, class: "fas fa-trash-alt fa-lg") %> </td>
         </tr>
