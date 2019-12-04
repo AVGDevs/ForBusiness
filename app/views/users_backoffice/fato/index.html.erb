@@ -1,5 +1,41 @@
-<h1>Tarefas</h1>
+<div class="float-left">
+    <h2>Tarefas</h2>
+</div>
 
+
+<div class="float-right">
+    <div class="btn-group">
+        <a class="btn btn-primary btn-sm dropdown-toggle" href="##" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Período </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <% @mesano.each do |m| %>
+                <%= link_to(m[0], {controller: "fato", action: "index", mesano: m[1]}, class: "dropdown-item") %>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<!--<form>
+    <select id="teste" nome="teste">
+        <% @mesano.each do |m| %>    
+            <option value="<%= m[0] %>"> <%=m[0]%> </option> 
+        <% end %>
+    </select>
+    <%= link_to("Ir", {controller: "fato", action: "index"}) %>
+</form>
+
+
+<%= form_tag({:controller => "fato", :action => "index"}, enforce_utf8: false, :method => "get") do %>
+    <%= select_tag(:mesano, options_for_select(@mesano.each { |m| m[0] })) %>
+    <%= submit_tag("Enviar", name: nil) %>
+<% end %>
+
+<% @mesano.each do |m| %>
+    <%= link_to(m[0], {controller: "fato", action: "index", mesano: m[1]} )%>
+<% end %>
+-->
 <div class="table-responsive">
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <tr >

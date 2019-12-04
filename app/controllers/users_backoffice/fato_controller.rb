@@ -8,7 +8,9 @@ class UsersBackoffice::FatoController < UsersBackofficeController
   end
 
   def index
-    @fato = Fato.where("departamento_id = ? AND status_id = ?", params[:departamento_id], params[:status_id])
+    dropdown_mesano
+
+    @fato = Fato.where("departamento_id = ? AND status_id = ? AND REPLACE(RIGHT(date_format(str_to_date(dataVencimentoTarefa, '%Y-%m-%d'), '%d/%m/%Y'),7),'/','') = ?", params[:departamento_id], params[:status_id], params[:mesano])
   end
 
   def new
@@ -45,6 +47,11 @@ class UsersBackoffice::FatoController < UsersBackofficeController
     @fato.update_attribute(:status_id, 2)
     registrar_log("Desfez")
     redirect_back fallback_location: {controller: 'users_backoffice/fato', action: 'index' }
+  end
+
+  private def dropdown_mesano
+    conn = ActiveRecord::Base.connection
+    @mesano = conn.execute "SELECT DISTINCT RIGHT(date_format(str_to_date(dataVencimentoTarefa, '%Y-%m-%d'), '%d/%m/%Y'),7) AS mesano, REPLACE(RIGHT(date_format(str_to_date(dataVencimentoTarefa, '%Y-%m-%d'), '%d/%m/%Y'),7),'/','') AS mesano_value FROM fatos;"
   end
 
 end

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   namespace :users_backoffice do
     get "welcome/index"
     resources :fato
-      match 'fato/:departamento_id/:status_id/index' => 'fato#index', via: 'get'
+      match 'fato/:departamento_id/:status_id/(:mesano)/index' => 'fato#index', via: 'get'
       match 'fato/:id/concluir_tarefa' => 'fato#concluir_tarefa', via: 'get'
       match 'fato/:id/desfazer_conclusao' => 'fato#desfazer_conclusao', via: 'get'
     resources :log_usuario

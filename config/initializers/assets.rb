@@ -27,12 +27,16 @@ Rails.application.config.assets.precompile += %w( admins_backoffice.js         a
                                                   devise/sessions.js           devise/sessions.css)
 
 #lib/assets
-Rails.application.config.assets.precompile += %w( javascripts/sb-admin-2.js   stylesheets/sb-admin-2.css 
-  javascripts/sb-admin-2.min.js   stylesheets/sb-admin-2.min.css 
-  javascripts/custom.js       stylesheets/custom.css
+Rails.application.config.assets.precompile += %w( javascripts/sb-admin-2.js   
+                                                  stylesheets/sb-admin-2.css 
+                                                  javascripts/sb-admin-2.min.js   
+                                                  stylesheets/sb-admin-2.min.css 
+                                                  javascripts/custom.js       
+                                                  stylesheets/custom.css
                                                   javascripts/demo/chart-area-demo.js
                                                   javascripts/demo/chart-bar-demo.js
                                                   javascripts/demo/chart-pie-demo.js
                                                   javascripts/demo/datatables-demo.js
+                                                  popper.js/dist/popper.js
                                                   img.jpg
                                                   user.png)
