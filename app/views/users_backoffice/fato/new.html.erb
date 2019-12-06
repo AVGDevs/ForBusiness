@@ -3,6 +3,7 @@
 <%= form_tag :action => "create" do %>
     Data de vencimento: <%= date_field :fato, :dataVencimentoTarefa %> <br>
     Status: <%= text_field :fato, :statusTarefa %> <br>
+    <%= collection_select(:fato, :dataVencimentoTarefa, Fato.all, :id, :status_id, { include_blank: "Selecione o status da tarefa" }) %> <br>
     <%= collection_select(:fato, :empresa_id, Empresa.all, :id, :nomeEmpresa, { include_blank: "Selecione a empresa" }) %> <br>
     <%= collection_select(:fato, :tarefa_id, Tarefa.all, :id, :nomeTarefa, { include_blank: "Selecione a tarefa" }) %> <br>
     <%= submit_tag "Criar" %>

@@ -3,8 +3,8 @@
 <h1>Novo colaborador</h1>
 
 <%= form_tag :action => "create" do %>
-    Nome do colaborador: <%= text_field :colaborador, :nomeColaborador %> <br>
-    CPF: <%= text_field :colaborador, :cpfColaborador %> <br>
+    Nome do colaborador:<br> <%= text_field :colaborador, :nomeColaborador %> <br>
+    CPF: <br><%= text_field :colaborador, :cpfColaborador %> <br>
     <%= collection_select(:colaborador, :departamento_id, Departamento.all, :id, :nomeDepartamento, { include_blank: "Selecione o departamento" }) %> <br>
-    <%= submit_tag "Criar" %>
+    <%= submit_tag "Criar" %>  <%= link_to("Voltar", {action: "index"}, class: "btn btn-primary btn-sm")%> 
 <% end %>

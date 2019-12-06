@@ -1,7 +1,8 @@
+<%= stylesheet_link_tag    'colaborador' %>
 <h1>Nova tarefa</h1>
 
 <%= form_tag :action => "create" do %>
-    Nome da tarefa: <%= text_field(:tarefa, :nomeTarefa, class: "form-control form-control-sm") %> <br>
+    Nome da tarefa:<br> <%= text_field(:tarefa, :nomeTarefa, class: "form-control form-control-sm") %> <br>
     <%= collection_select(:tarefa, :departamento_id, Departamento.all, :id, :nomeDepartamento, { include_blank: "Selecione o departamento" }) %> <br> <br>
     <%= submit_tag("Criar", class: "btn btn-primary btn-sm") %> <%= link_to("Voltar", {action: "index"}, class: "btn btn-primary btn-sm")%>
 <% end %>

@@ -163,6 +163,18 @@
               <span>Tarefas</span></a>
               <% end %>
           </li>
+          <li class="nav-item active">
+            <%= link_to colaborador_index_path, class:"nav-link" do %>
+              <i class="chart-area"></i>
+              <span>Colaborador</span></a>
+              <% end %>
+          </li>          
+          <li class="nav-item active">
+            <%= link_to new_user_registration_path, class:"nav-link" do %><br />
+              <i class="chart-area"></i>
+              <span>Criar Novo Usuário</span></a>
+            <% end %>
+          </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
@@ -253,7 +265,7 @@
                 <!-- Dropdown - User Information -->
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                   <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                    <i class="fa fa-sign-out fa-fw"></i>
+                    <i class="fa fa-sign fa-fw"></i>
                     Sair
                   </a>
                 </div>
@@ -311,13 +323,12 @@
           <div class="modal-body">Selecione "Sair" abaixo se você estiver pronto para terminar sua sessão atual.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-            <%= link_to "Sair", destroy_admin_session_path, method: :delete, class:"btn btn-primary" %>
+            <%= link_to "Sair", destroy_admin_session_path, :method => :delete, class:"btn btn-primary" %>
           </div>
         </div>
       </div>
     </div>
     
-    <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'admins_backoffice' %>
 
   </body>
