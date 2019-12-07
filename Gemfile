@@ -41,7 +41,9 @@ gem 'tty-spinner'
 gem 'coffee-script-source'
 gem 'execjs'
 gem 'dotenv-rails'
+gem 'popper_js'
 gem 'rspec-rails', '~> 3.9'
+
 
 group :test, :development do
   gem 'rspec-rails', '~> 3.9'
