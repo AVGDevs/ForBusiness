@@ -13,7 +13,7 @@
     		<tr class="text-center active">
 				<td> <%= e.nomeEmpresa %> </td>
 				<td> <%= e.cnpjEmpresa %> </td>
-				<td> <%= e.statusEmpresa %> </td>
+				<td> <%= e.situacao.situacao %> </td>
 				<td> <%= link_to("", {action: "edit", id: e}, class: "fas fa-edit fa-lg") %> </td>
           		<td> <%= link_to("", {action: "delete_empresa", id: e}, class: "fas fa-trash-alt fa-lg") %> </td>
 			</tr>

@@ -1,0 +1,2 @@
+class SituacaoController < ApplicationController
+end

@@ -1,7 +1,11 @@
 <h3>Novo Departamento</h3>
 
 <%= form_tag :action => "create" do %>
-    Nome do departamento: <br> <%= text_field(:departamento, :nomeDepartamento, class: "form-control form-control-sm") %> <br/>
-    Abreviação: <br> <%= text_field(:departamento, :abreviacao, class: "form-control form-control-sm") %> <br>
+    Nome do departamento: <br> 
+    <%= text_field(:departamento, :nomeDepartamento, class: "form-control form-control-sm") %> <br/>
+    Abreviação: <br> 
+    <%= text_field(:departamento, :abreviacao, class: "form-control form-control-sm") %> <br>
+    Situação: <br>
+    <%= collection_select(:departamento, :situacao_id, Situacao.all, :id, :situacao, { include_blank: "Selecione a situação" }, class: "btn btn-primary btn-sm dropdown-toggle") %> <br> <br>
     <%= submit_tag("Criar", class: "btn btn-primary btn-sm") %> <%= link_to("Voltar", {action: "index"}, class: "btn btn-primary btn-sm")%>
 <% end %>

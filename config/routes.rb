@@ -23,7 +23,9 @@ Rails.application.routes.draw do
   resources :empresa
   match "delete_empresa" => "empresa#delete_empresa", via: "get"
   match "empresa/:id/edit" => "empresa#update", via: "post"
-
+  match "admins_backoffice/empresa/criar_tarefas_mensais" => "admins_backoffice/empresa#criar_tarefas_mensais", via: "post"
+  match "empresa/criar_tarefas_mensais" => "empresa#criar_tarefas_mensais", via: "post"
+  
   resources :departamento
   match "delete_departamento" => "departamento#delete_departamento", via: "get"
   match "departamento/:id/edit" => "departamento#update", via: "post"

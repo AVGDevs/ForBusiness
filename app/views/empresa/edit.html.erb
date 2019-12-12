@@ -2,9 +2,23 @@
 
 <div>
   <%= form_tag :action => "edit" do %>
-      Nome da empresa: <%= text_field(:empresa, :nomeEmpresa, class: "form-control form-control-sm") %> <br/>
-      CNPJ: <%= text_field(:empresa, :cnpjEmpresa, class: "form-control form-control-sm") %> <br/>
-      Status: <%= text_field(:empresa, :statusEmpresa, class: "form-control form-control-sm") %> <br/>
+      Nome da empresa: 
+      <%= text_field(:empresa, :nomeEmpresa, class: "form-control form-control-sm") %> <br/>
+      CNPJ:
+      <%= text_field(:empresa, :cnpjEmpresa, class: "form-control form-control-sm") %> <br/>
+      Situação: <br>
+      <%= collection_select(:empresa, :situacao_id, Situacao.all, :id, :situacao, { include_blank: "Selecione a situação" }, class: "btn btn-primary btn-sm dropdown-toggle") %> <br> <br>
+      <h3>Datas de entrega (Dia do mês)</h3>
+      Ativo Fixo:
+      <%= text_field(:empresa, :entregaAtivoFixo, class: "form-control form-control-sm") %> <br/>
+      Escrita fiscal: 
+      <%= text_field(:empresa, :entregaEscritaFiscal, class: "form-control form-control-sm") %> <br/>
+      Estoque: 
+      <%= text_field(:empresa, :entregaEstoque, class: "form-control form-control-sm") %> <br/>
+      Folha de pagamento: 
+      <%= text_field(:empresa, :entregaFolhaDePagamento, class: "form-control form-control-sm") %> <br/>
+      Pgto e recebimento: 
+      <%= text_field(:empresa, :entregaPgtoERecebimento, class: "form-control form-control-sm") %> <br/>
       <%= submit_tag("Salvar", class: "btn btn-primary btn-sm") %> <%= link_to("Voltar", {action: "index"}, class: "btn btn-primary btn-sm")%>
   <% end %>
 </div>

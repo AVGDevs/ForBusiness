@@ -168,7 +168,13 @@
               <i class="chart-area"></i>
               <span>Colaborador</span></a>
               <% end %>
-          </li>          
+          </li>
+          <li class="nav-item active">
+            <%= button_to({controller: "empresa", action: "criar_tarefas_mensais"}, class: "nav-link") do %>
+              <i class="chart-area"></i>
+              <span>Gerar tarefas</span></a>
+            <%end%>
+          </li>
           <li class="nav-item active">
             <%= link_to new_user_registration_path, class:"nav-link" do %><br />
               <i class="chart-area"></i>

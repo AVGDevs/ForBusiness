@@ -1,7 +1,7 @@
 class DepartamentoController < AdminsBackofficeController
   
   def departamento_params
-    params.require(:departamento).permit(:nomeDepartamento, :abreviacao)
+    params.require(:departamento).permit(:nomeDepartamento, :abreviacao, :situacao_id)
   end
 
   def index

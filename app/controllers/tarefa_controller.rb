@@ -1,7 +1,7 @@
 class TarefaController < AdminsBackofficeController
 
   def tarefas_params
-    params.require(:tarefa).permit(:nomeTarefa, :departamento_id)
+    params.require(:tarefa).permit(:nomeTarefa, :departamento_id, :situacao_id)
   end
 
   def index

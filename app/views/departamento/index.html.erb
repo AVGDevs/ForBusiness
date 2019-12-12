@@ -5,6 +5,7 @@
         <tr>
             <th>Nome do departamento</th>
             <th>Abreviação</th>
+            <th>Status</th>
             <th>Editar</th>
             <th>Excluir</th>
         </tr>
@@ -13,6 +14,7 @@
         <tr>
             <td> <%= d.nomeDepartamento %> </td>
             <td> <%= d.abreviacao %> </td>
+            <td> <%= d.situacao.situacao %> </td>
             <td> <%= link_to("", {action: "edit", id: d}, class: "fas fa-edit fa-lg") %> </td>
             <td> <%= link_to("", {action: "delete_departamento", id: d}, class: "fas fa-trash-alt fa-lg") %> </td>
         </tr>
