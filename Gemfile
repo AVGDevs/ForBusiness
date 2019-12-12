@@ -43,6 +43,8 @@ gem 'execjs'
 gem 'dotenv-rails'
 gem 'popper_js'
 gem 'rspec-rails', '~> 3.9'
+gem 'rails-i18n', '~> 5.1'
+gem 'rack-attack'
 
 
 group :test, :development do
