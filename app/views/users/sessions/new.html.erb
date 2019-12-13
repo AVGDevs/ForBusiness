@@ -35,6 +35,9 @@
                   <hr>
                   <div class="caixa-login text-center">
                   <h2>Usuário</h2>
+                    <% flash.each do |key, value| %>
+                      <div class="flash <%= key %>"><%= value %></div>
+                    <% end %>
                     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                         <div class="field text-center">
                         <%= f.label "Email"%><br />
@@ -57,9 +60,10 @@
 
                         <div class="action">
                           <%= link_to "Voltar", root_path, class:"btn btn-primary btn-user btn-block-small"	%> <%= f.submit "Entrar", class:"btn btn-primary btn-user btn-block-small" %> 
-                        </div>
+                        </div>                        
                         <%= render "users/shared/links" %>
                         <%end%>
+                        <br><p> Clique em "Esqueceu a senha?" e receba um email para alterar sua senha, caso seja seu 1º acesso.  </p>  
                         
                       
                     </div>

@@ -33,25 +33,23 @@
                   <hr>
                   <div class="caixa-login">
 
-                  <h2>Reenviar instruções de confirmação</h2>
+                  <h2 class="text-center">Reenviar Confirmação</h2>
 
                   <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
                     <%= render "devise/shared/error_messages", resource: resource %>
 
-                    <div class="field">
+                    <div class="field text-center">
                       <%= f.label :email %><br />
                       <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
-                    </div>
+                    </div><br>
 
-                    <div class="actions">
-                      <%= f.submit "Reenviar instruções de confirmação" %>
-                    </div>
-                  <% end %>
-
-                  <%= render "users/shared/links" %>
-
-                </div>
-                  
+                    <div class="action text-center">
+                      <%= f.submit "Reenviar instruções de confirmação", class:"btn btn-primary btn-user btn-block-small"	%>
+                    </div><br>
+                    <div class="action text-center">
+                      <%= link_to "Voltar", root_path, class:"btn btn-primary btn-user btn-block-small"	%> 
+                    </div>   
+                  <%end%>                                     
                   <hr>
                 </div>
               </div>

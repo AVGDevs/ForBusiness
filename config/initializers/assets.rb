@@ -24,7 +24,8 @@ Rails.application.config.assets.precompile += %w( admins_backoffice.js         a
                                                   tarefa.js                    tarefa.css                                                  
                                                   devise/registrations.coffee  devise/registrations.css
                                                   devise/passwords.coffee      devise/passwords.css
-                                                  devise/sessions.js           devise/sessions.css)
+                                                  devise/sessions.js           devise/sessions.css
+                                                  devise/confirmations.coffee   devise/confirmations.css)
 
 #lib/assets
 Rails.application.config.assets.precompile += %w( javascripts/sb-admin-2.js   
