@@ -5,20 +5,20 @@
       Nome da empresa: 
       <%= text_field(:empresa, :nomeEmpresa, class: "form-control form-control-sm") %> <br/>
       CNPJ:
-      <%= text_field(:empresa, :cnpjEmpresa, class: "form-control form-control-sm") %> <br/>
+      <%= text_field(:empresa, :cnpjEmpresa, class: "form-control form-control-sm", pattern: ".{14,14}", title: "Digite um CNPJ com 14 dígitos!") %> <br/>
       Situação: <br>
       <%= collection_select(:empresa, :situacao_id, Situacao.all, :id, :situacao, { include_blank: "Selecione a situação" }, class: "btn btn-primary btn-sm dropdown-toggle") %> <br> <br>
       <h3>Datas de entrega (Dia do mês)</h3>
       Ativo Fixo:
-      <%= text_field(:empresa, :entregaAtivoFixo, class: "form-control form-control-sm") %> <br/>
+      <%= text_field(:empresa, :entregaAtivoFixo, class: "form-control form-control-sm", type: "number", step: "1", min: "1", max: "31", title: "Escolha um dia entre 1 e 31!") %> <br/>
       Escrita fiscal: 
-      <%= text_field(:empresa, :entregaEscritaFiscal, class: "form-control form-control-sm") %> <br/>
+      <%= text_field(:empresa, :entregaEscritaFiscal, class: "form-control form-control-sm", type: "number", step: "1", min: "1", max: "31", title: "Escolha um dia entre 1 e 31!") %> <br/>
       Estoque: 
-      <%= text_field(:empresa, :entregaEstoque, class: "form-control form-control-sm") %> <br/>
+      <%= text_field(:empresa, :entregaEstoque, class: "form-control form-control-sm", type: "number", step: "1", min: "1", max: "31", title: "Escolha um dia entre 1 e 31!") %> <br/>
       Folha de pagamento: 
-      <%= text_field(:empresa, :entregaFolhaDePagamento, class: "form-control form-control-sm") %> <br/>
+      <%= text_field(:empresa, :entregaFolhaDePagamento, class: "form-control form-control-sm", type: "number", step: "1", min: "1", max: "31", title: "Escolha um dia entre 1 e 31!") %> <br/>
       Pgto e recebimento: 
-      <%= text_field(:empresa, :entregaPgtoERecebimento, class: "form-control form-control-sm") %> <br/>
+      <%= text_field(:empresa, :entregaPgtoERecebimento, class: "form-control form-control-sm", type: "number", step: "1", min: "1", max: "31", title: "Escolha um dia entre 1 e 31!") %> <br/>
       <%= submit_tag("Salvar", class: "btn btn-primary btn-sm") %> <%= link_to("Voltar", {action: "index"}, class: "btn btn-primary btn-sm")%>
   <% end %>
 </div>
