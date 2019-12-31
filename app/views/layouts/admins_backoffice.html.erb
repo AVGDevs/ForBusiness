@@ -28,9 +28,9 @@
       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <%= link_to admins_backoffice_welcome_index_path, class:"text-center" do %>
-            <%= image_tag("AVG Branco", size: "150x69") %>
-          <%end%>
+        <div id="logo">
+            <%= image_tag("AVG Branco", height: 60, width: 100)%> 
+        </div>
 
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
@@ -123,7 +123,7 @@
 
           <!--Heading-->
           <div class="sidebar-heading">
-            Configurações
+            <span>Configuração</span>
           </div>
 
           <!--Nav Item - Pages Collapse Menu 
@@ -163,12 +163,12 @@
               <span>Tarefas</span></a>
               <% end %>
           </li>
-          <li class="nav-item active">
-            <%= link_to colaborador_index_path, class:"nav-link" do %>
+          <%# <li class="nav-item active">
+            <%= link_to colaborador_index_path, class:"nav-link" do 
               <i class="chart-area"></i>
               <span>Colaborador</span></a>
-              <% end %>
-          </li>
+              <% end 
+          </li>%>
           <li class="nav-item active">
             <%= button_to({controller: "empresa", action: "criar_tarefas_mensais"}, class: "nav-link") do %>
               <i class="chart-area"></i>

@@ -64,6 +64,7 @@ namespace :dev do
     )
   end
 
+  # Criação de Empresas
   desc "Cria empresas padrão"
   task add_default_empresas: :environment do
     Empresa.create!(
@@ -112,6 +113,7 @@ namespace :dev do
     )
   end
 
+  # Criação de Departamento
   desc "Cria departamentos padrão"
   task add_default_departamentos: :environment do
     Departamento.create! (
@@ -140,6 +142,7 @@ namespace :dev do
     )
   end
 
+    # Criação de Tarefas
   desc "Cria tarefas padrão"
   task add_default_tarefas: :environment do
     Tarefa.create! (
@@ -208,6 +211,7 @@ namespace :dev do
     )
   end
 
+    # Inserção na tabela Fato 
   desc "Adiciona os fatos padrão"
   task add_default_fatos: :environment do
     Fato.create! (
@@ -1116,17 +1120,6 @@ namespace :dev do
       ]
     )
   end
-
-  #desc "Adiciona o administrador extras"
-  #task add_extras_admin: :environment do
-  #  10.times do |i|
-  #    Admin.create!(
-  #    email: Faker::Internet.email,
-  #    password: DEFAULT_PASSWORD,
-  #    password_confirmation: DEFAULT_PASSWORD
-  #    )
-  #  end
-  #end
 
   private
   def show_spinner(msg_start,msg_end = "Concluido!")
