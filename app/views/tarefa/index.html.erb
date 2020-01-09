@@ -7,7 +7,7 @@
             <th>Departamento</th>
             <th>Status</th>
             <th>Editar</td>
-            <th>Excluir</td>
+            <%# <th>Excluir</td> %>
         </tr>
 
         <% @tarefa.each do |t|%>
@@ -16,7 +16,7 @@
                 <td> <%= t.departamento.nomeDepartamento %></td>
                 <td> <%= t.situacao.situacao %> </td>
                 <td> <%= link_to("", {action: "edit", id: t}, class: "fas fa-edit fa-lg")%> </td>
-                <td> <%= link_to("", {action: "delete_tarefa", id: t}, class: "fas fa-trash-alt fa-lg" )%> </td>
+                <%# <td> <%= link_to("", {action: "delete_tarefa", id: t}, class: "fas fa-trash-alt fa-lg" )%> </td> 
             </tr>
         <% end %>
     </table>

@@ -6,7 +6,7 @@
 			<th>CNPJ</th>
 			<th>Status</th>
 			<th>Editar</th>
-			<th>Excluir</th>
+			<%# <th>Excluir</th> %>
     	</tr>
   		<% @empresa.each do |e| %>
     		<tr class="text-center active">
@@ -14,7 +14,7 @@
 				<td> <%= e.cnpjEmpresa %> </td>
 				<td> <%= e.situacao.situacao %> </td>
 				<td> <%= link_to("", {action: "edit", id: e}, class: "fas fa-edit fa-lg") %> </td>
-          		<td> <%= link_to("", {action: "delete_empresa", id: e}, class: "fas fa-trash-alt fa-lg") %> </td>
+          		<%# <td> <%= link_to("", {action: "delete_empresa", id: e}, class: "fas fa-trash-alt fa-lg") %> </td>
 			</tr>
   		<% end %>
 	</table>

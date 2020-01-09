@@ -7,7 +7,7 @@
             <th>Abreviação</th>
             <th>Status</th>
             <th>Editar</th>
-            <th>Excluir</th>
+            <%# <th>Excluir</th> %>
         </tr>
 
     <% @departamento.each do |d| %>
@@ -16,7 +16,7 @@
             <td> <%= d.abreviacao %> </td>
             <td> <%= d.situacao.situacao %> </td>
             <td> <%= link_to("", {action: "edit", id: d}, class: "fas fa-edit fa-lg") %> </td>
-            <td> <%= link_to("", {action: "delete_departamento", id: d}, class: "fas fa-trash-alt fa-lg") %> </td>
+            <%# <td> <%= link_to("", {action: "delete_departamento", id: d}, class: "fas fa-trash-alt fa-lg") %> </td>
         </tr>
     <% end %>
     </table>
