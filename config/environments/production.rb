@@ -92,6 +92,7 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   config.assets.js_compressor = Uglifier.new(harmony: true)
+  config.assets.js_compressor = :uglifier_with_source_maps
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
