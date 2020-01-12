@@ -91,7 +91,7 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.assets.js_compressor = Uglifier.new(harmony: true)
+  config.assets.uglifier = { harmony: true }
   config.assets.js_compressor = :uglifier_with_source_maps
 
   # Use a different logger for distributed setups.
