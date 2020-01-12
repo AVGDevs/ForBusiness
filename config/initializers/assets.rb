@@ -40,4 +40,5 @@ Rails.application.config.assets.precompile += %w( javascripts/sb-admin-2.js
                                                   javascripts/demo/datatables-demo.js
                                                   popper.js/dist/popper.js
                                                   img.jpg
-                                                  user.png)
+                                                  user.png
+                                                  Uglifier.new(:harmony => true))
