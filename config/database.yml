@@ -53,6 +53,3 @@ production:
   username: root
   password: root@123
   advisory_locks: false
-  host: 128.199.233.36
-  port: 3306
-  pool: 10
