@@ -1,10 +1,10 @@
 require 'uglifier'
 
-Uglifier.new.compile(File.read("source.js"))
-# => js file minified
+# Uglifier.new.compile(File.read("source.js"))
+# # => js file minified
 
-# # Or alternatively
-# Uglifier.compile(File.read("source.js"))
+# # # Or alternatively
+# # Uglifier.compile(File.read("source.js"))
   
   Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
