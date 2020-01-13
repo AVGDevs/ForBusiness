@@ -50,6 +50,9 @@ test:
 production:
   <<: *default
   database: ForBusiness_production
-  username: ForBusiness
-  password: <%= ENV['FORBUSINESS_DATABASE_PASSWORD'] %>
+  username: root
+  password: root@123
   advisory_locks: false
+  host: 128.199.233.36
+  port: 3306
+  pool: 10
