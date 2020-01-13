@@ -44,11 +44,13 @@ require 'uglifier'
 
   # Compress JavaScripts and CSS.
   # config.assets.js_compressor = :uglifier
-  config.assets.js_compressor = Uglifier.new(harmony: true)
+  config.assets.js_compressor = NoCompression.new
+  # config.assets.js_compressor = Uglifier.new(harmony: true)
   # config.assets.css_compressor = :sass
+  config.assets.css_compressor = NoCompression.new
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -99,9 +101,6 @@ require 'uglifier'
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-
-  config.assets.uglifier = { harmony: true }
-
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
