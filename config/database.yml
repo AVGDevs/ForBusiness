@@ -51,7 +51,8 @@ production:
   adapter: postgresql
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: ForBusiness_production
-  username: root
-  password: root@123
-  advisory_locks: false
+  database: ddrlimoddu815d
+  port: 5432
+  username: zdvapclbdtlmwt
+  password: 8c0dadd590143cf230062517c23b1b84dea41a1837324146ca89e79ab77f4d41
+  url: <%= ENV['postgres://zdvapclbdtlmwt:8c0dadd590143cf230062517c23b1b84dea41a1837324146ca89e79ab77f4d41@ec2-3-220-86-239.compute-1.amazonaws.com:5432/ddrlimoddu815d'] %>
