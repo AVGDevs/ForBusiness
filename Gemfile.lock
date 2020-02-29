@@ -124,7 +124,7 @@ GEM
     pg (1.2.2)
     popper_js (1.14.5)
     public_suffix (4.0.1)
-    puma (3.12.1)
+    puma (3.12.3)
     rack (2.0.7)
     rack-attack (6.2.1)
       rack (>= 1.0, < 3)
@@ -254,7 +254,7 @@ DEPENDENCIES
   mysql2 (>= 0.4.4, < 0.6.0)
   pg
   popper_js
-  puma (~> 3.11)
+  puma (~> 3.12)
   rack-attack
   rails (~> 5.2.3)
   rails-i18n (~> 5.1)
